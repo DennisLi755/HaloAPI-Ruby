@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HaloApi
+module HaloMspApi
   module Resources
     class Integrations < Base
       # Integration Data methods - these handle the massive number of third-party integrations

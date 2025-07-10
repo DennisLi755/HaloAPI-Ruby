@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-require_relative "lib/halo_api/version"
+require_relative "lib/halo_msp_api/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "halo_api"
-  spec.version = HaloApi::VERSION
+  spec.name = "halo_msp_api"
+  spec.version = HaloMspApi::VERSION
   spec.authors = ["Evo Security"]
   spec.email = ["support@evosecurity.com"]
 
-  spec.summary = "Ruby API wrapper for Halo ITSM/PSA/CRM REST API"
-  spec.description = "A comprehensive Ruby gem for interacting with the Halo ITSM, HaloPSA and HaloCRM REST API"
+  spec.summary = "Ruby API wrapper for Halo MSP platform (ITSM/PSA/CRM) REST API"
+  spec.description = "A comprehensive Ruby gem for interacting with the Halo MSP platform including HaloITSM, HaloPSA and HaloCRM REST APIs"
   spec.homepage = "https://github.com/evosecurity/HaloAPI-Ruby"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"

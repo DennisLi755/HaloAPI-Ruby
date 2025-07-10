@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-RSpec.describe HaloApi::Client do
+RSpec.describe HaloMspApi::Client do
   let(:configuration) do
-    HaloApi::Configuration.new.tap do |config|
+    HaloMspApi::Configuration.new.tap do |config|
       config.base_url = "https://test.haloitsm.com/api"
       config.client_id = "test_client_id"
       config.client_secret = "test_client_secret"
