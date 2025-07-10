@@ -5,19 +5,19 @@ require_relative "lib/halo_api/version"
 Gem::Specification.new do |spec|
   spec.name = "halo_api"
   spec.version = HaloApi::VERSION
-  spec.authors = ["Your Name"]
-  spec.email = ["your.email@example.com"]
+  spec.authors = ["Evo Security"]
+  spec.email = ["support@evosecurity.com"]
 
   spec.summary = "Ruby API wrapper for Halo ITSM/PSA/CRM REST API"
   spec.description = "A comprehensive Ruby gem for interacting with the Halo ITSM, HaloPSA and HaloCRM REST API"
-  spec.homepage = "https://github.com/yourusername/halo_api"
+  spec.homepage = "https://github.com/evosecurity/HaloAPI-Ruby"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/yourusername/halo_api"
-  spec.metadata["changelog_uri"] = "https://github.com/yourusername/halo_api/blob/main/CHANGELOG.md"
+  spec.metadata["source_code_uri"] = "https://github.com/evosecurity/HaloAPI-Ruby"
+  spec.metadata["changelog_uri"] = "https://github.com/evosecurity/HaloAPI-Ruby/blob/main/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
