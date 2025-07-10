@@ -227,7 +227,7 @@ end
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/yourusername/halo_api.
+Bug reports and pull requests are welcome on GitHub at https://github.com/evosecurity/HaloAPI-Ruby.
 
 ## License
 
