@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HaloApi
+module HaloMspApi
   module Resources
     class Assets < Base
       # GET /Asset - List of Assets

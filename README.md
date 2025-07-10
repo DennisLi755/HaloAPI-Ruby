@@ -1,4 +1,4 @@
-# HaloApi Ruby Gem
+# HaloMspApi Ruby Gem
 
 A comprehensive Ruby API wrapper for the Halo ITSM, HaloPSA and HaloCRM REST API.
 
@@ -7,7 +7,7 @@ A comprehensive Ruby API wrapper for the Halo ITSM, HaloPSA and HaloCRM REST API
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'halo_api'
+gem 'halo_msp_api'
 ```
 
 And then execute:
@@ -16,14 +16,14 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install halo_api
+    $ gem install halo_msp_api
 
 ## Configuration
 
 Configure the gem with your Halo API credentials:
 
 ```ruby
-HaloApi.configure do |config|
+HaloMspApi.configure do |config|
   config.base_url = "https://your-halo-instance.haloitsm.com/api"
   config.client_id = "your_client_id"
   config.client_secret = "your_client_secret"
@@ -39,10 +39,10 @@ end
 
 ```ruby
 # Initialize client
-client = HaloApi.client
+client = HaloMspApi.client
 
 # Or create a new client with custom configuration
-config = HaloApi::Configuration.new
+config = HaloMspApi::Configuration.new
 config.base_url = "https://your-instance.haloitsm.com/api"
 config.client_id = "your_client_id"
 config.client_secret = "your_client_secret"

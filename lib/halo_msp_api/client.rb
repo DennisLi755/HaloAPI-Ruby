@@ -4,7 +4,7 @@ require "faraday"
 require "faraday/retry"
 require "json"
 
-module HaloApi
+module HaloMspApi
   class Client
     attr_reader :configuration, :connection
 

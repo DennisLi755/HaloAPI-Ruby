@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HaloApi
+module HaloMspApi
   module Resources
     class KnowledgeBase < Base
       # GET /KBArticle - List of Knowledge Base Articles

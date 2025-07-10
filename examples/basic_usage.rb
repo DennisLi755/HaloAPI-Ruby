@@ -2,10 +2,10 @@
 # frozen_string_literal: true
 
 require "bundler/setup"
-require "halo_api"
+require "halo_msp_api"
 
-# Configure the HaloApi gem
-HaloApi.configure do |config|
+# Configure the HaloMspApi gem
+HaloMspApi.configure do |config|
   config.base_url = ENV["HALO_BASE_URL"] || "https://your-instance.haloitsm.com/api"
   config.client_id = ENV["HALO_CLIENT_ID"] || "your_client_id"
   config.client_secret = ENV["HALO_CLIENT_SECRET"] || "your_client_secret"
@@ -15,7 +15,7 @@ HaloApi.configure do |config|
 end
 
 # Get a client instance
-client = HaloApi.client
+client = HaloMspApi.client
 
 begin
   puts "=== HaloApi Ruby Gem Example Usage ==="
@@ -59,13 +59,13 @@ begin
 
   puts "=== Example completed successfully! ==="
 
-rescue HaloApi::AuthenticationError => e
+rescue HaloMspApi::AuthenticationError => e
   puts "Authentication failed: #{e.message}"
   puts "Please check your client_id and client_secret"
-rescue HaloApi::AuthorizationError => e
+rescue HaloMspApi::AuthorizationError => e
   puts "Authorization failed: #{e.message}"
   puts "Please check your permissions"
-rescue HaloApi::APIError => e
+rescue HaloMspApi::APIError => e
   puts "API Error: #{e.message}"
   puts "Status Code: #{e.status_code}" if e.respond_to?(:status_code)
 rescue StandardError => e

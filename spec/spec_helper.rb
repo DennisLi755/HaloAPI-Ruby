@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "bundler/setup"
-require "halo_api"
+require "halo_msp_api"
 require "webmock/rspec"
 require "vcr"
 

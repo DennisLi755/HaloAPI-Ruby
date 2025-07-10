@@ -1,13 +1,16 @@
 # frozen_string_literal: true
 
-RSpec.describe HaloApi do
+require 'halo_msp_api'
+
+RSpec.describe HaloMspApi do
   it "has a version number" do
-    expect(HaloApi::VERSION).not_to be nil
+    expect(HaloMspApi::VERSION).not_to be nil
   end
 
   describe ".configure" do
     it "yields configuration" do
-      expect { |b| HaloApi.configure(&b) }.to yield_with_args(HaloApi::Configuration)
+      expect { |b| HaloMspApi.configure(&b) }.to yield_with_args(HaloMspApi::Configuration)
+
     end
 
     it "sets configuration" do

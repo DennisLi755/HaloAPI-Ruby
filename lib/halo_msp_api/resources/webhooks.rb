@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HaloApi
+module HaloMspApi
   module Resources
     class Webhooks < Base
       # GET /Webhook - List of Webhooks
