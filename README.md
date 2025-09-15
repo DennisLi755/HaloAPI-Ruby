@@ -1,5 +1,7 @@
 # HaloMspApi Ruby Gem
 
+[![Gem Version](https://img.shields.io/gem/v/halo_msp_api)](https://rubygems.org/gems/halo_msp_api)
+
 A comprehensive Ruby API wrapper for the Halo ITSM, HaloPSA and HaloCRM REST API.
 
 ## Installation
