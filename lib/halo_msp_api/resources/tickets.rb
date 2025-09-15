@@ -5,68 +5,68 @@ module HaloMspApi
     class Tickets < Base
       # GET /Tickets - List of Tickets
       def list(params = {})
-        list_resource("Tickets", params)
+        list_resource('Tickets', params)
       end
 
       # GET /Tickets/{id} - Get a specific Ticket
-      def get(id, params = {})
-        get_resource("Tickets", id, params)
+      def get_ticket(id, params = {})
+        get_resource('Tickets', id, params)
       end
 
       # POST /Tickets - Create a new Ticket
-      def create(data)
-        create_resource("Tickets", data)
+      def create_ticket(data)
+        create_resource('Tickets', data)
       end
 
       # PUT /Tickets/{id} - Update a Ticket
-      def update(id, data)
-        update_resource("Tickets", id, data)
+      def update_ticket(id, data)
+        update_resource('Tickets', id, data)
       end
 
       # DELETE /Tickets/{id} - Delete a Ticket
-      def delete(id)
-        delete_resource("Tickets", id)
+      def delete_ticket(id)
+        delete_resource('Tickets', id)
       end
 
       # GET /Tickets/Object - Get Ticket object
       def object(params = {})
-        get(resource_path("Tickets", nil, "Object"), params)
+        get(resource_path('Tickets', nil, 'Object'), params)
       end
 
       # POST /Tickets/processchildren - Process child tickets
       def process_children(data)
-        post(resource_path("Tickets", nil, "processchildren"), data)
+        post(resource_path('Tickets', nil, 'processchildren'), data)
       end
 
       # GET /Tickets/salesmailbox - Get sales mailbox tickets
       def sales_mailbox(params = {})
-        get(resource_path("Tickets", nil, "salesmailbox"), params)
+        get(resource_path('Tickets', nil, 'salesmailbox'), params)
       end
 
       # POST /Tickets/SetBillableProject - Set billable project
       def set_billable_project(data)
-        post(resource_path("Tickets", nil, "SetBillableProject"), data)
+        post(resource_path('Tickets', nil, 'SetBillableProject'), data)
       end
 
       # GET /Tickets/View - Get Ticket view
       def view(params = {})
-        get(resource_path("Tickets", nil, "View"), params)
+        get(resource_path('Tickets', nil, 'View'), params)
       end
 
       # POST /Tickets/vote - Vote on a ticket
       def vote(data)
-        post(resource_path("Tickets", nil, "vote"), data)
+        post(resource_path('Tickets', nil, 'vote'), data)
       end
 
       # POST /Tickets/zapier - Zapier integration
       def zapier(data)
-        post(resource_path("Tickets", nil, "zapier"), data)
+        post(resource_path('Tickets', nil, 'zapier'), data)
       end
 
       # Ticket Approval methods
       # GET /TicketApproval - List Ticket approvals
       def approvals(params = {})
-        get("/TicketApproval", params)
+        get('/TicketApproval', params)
       end
 
       # GET /TicketApproval/{id} - Get specific Ticket approval
@@ -81,7 +81,7 @@ module HaloMspApi
 
       # POST /TicketApproval - Create Ticket approval
       def create_approval(data)
-        post("/TicketApproval", data)
+        post('/TicketApproval', data)
       end
 
       # PUT /TicketApproval/{id} - Update Ticket approval
@@ -97,7 +97,7 @@ module HaloMspApi
       # Ticket Area methods
       # GET /TicketArea - List Ticket areas
       def areas(params = {})
-        get("/TicketArea", params)
+        get('/TicketArea', params)
       end
 
       # GET /TicketArea/{id} - Get specific Ticket area
@@ -107,7 +107,7 @@ module HaloMspApi
 
       # POST /TicketArea - Create Ticket area
       def create_area(data)
-        post("/TicketArea", data)
+        post('/TicketArea', data)
       end
 
       # PUT /TicketArea/{id} - Update Ticket area
@@ -123,7 +123,7 @@ module HaloMspApi
       # Ticket Rules methods
       # GET /TicketRules - List Ticket rules
       def rules(params = {})
-        get("/TicketRules", params)
+        get('/TicketRules', params)
       end
 
       # GET /TicketRules/{id} - Get specific Ticket rule
@@ -133,7 +133,7 @@ module HaloMspApi
 
       # POST /TicketRules - Create Ticket rule
       def create_rule(data)
-        post("/TicketRules", data)
+        post('/TicketRules', data)
       end
 
       # PUT /TicketRules/{id} - Update Ticket rule
@@ -149,7 +149,7 @@ module HaloMspApi
       # Ticket Type methods
       # GET /TicketType - List Ticket types
       def types(params = {})
-        get("/TicketType", params)
+        get('/TicketType', params)
       end
 
       # GET /TicketType/{id} - Get specific Ticket type
@@ -159,7 +159,7 @@ module HaloMspApi
 
       # POST /TicketType - Create Ticket type
       def create_type(data)
-        post("/TicketType", data)
+        post('/TicketType', data)
       end
 
       # PUT /TicketType/{id} - Update Ticket type
@@ -174,13 +174,13 @@ module HaloMspApi
 
       # GET /TicketTypeField - List Ticket type fields
       def type_fields(params = {})
-        get("/TicketTypeField", params)
+        get('/TicketTypeField', params)
       end
 
       # Ticket Type Group methods
       # GET /TicketTypeGroup - List Ticket type groups
       def type_groups(params = {})
-        get("/TicketTypeGroup", params)
+        get('/TicketTypeGroup', params)
       end
 
       # GET /TicketTypeGroup/{id} - Get specific Ticket type group
@@ -190,7 +190,7 @@ module HaloMspApi
 
       # POST /TicketTypeGroup - Create Ticket type group
       def create_type_group(data)
-        post("/TicketTypeGroup", data)
+        post('/TicketTypeGroup', data)
       end
 
       # PUT /TicketTypeGroup/{id} - Update Ticket type group

@@ -5,54 +5,54 @@ module HaloMspApi
     class Assets < Base
       # GET /Asset - List of Assets
       def list(params = {})
-        list_resource("Asset", params)
+        list_resource('Asset', params)
       end
 
       # GET /Asset/{id} - Get a specific Asset
-      def get(id, params = {})
-        get_resource("Asset", id, params)
+      def get_asset(id, params = {})
+        get_resource('Asset', id, params)
       end
 
       # POST /Asset - Create a new Asset
-      def create(data)
-        create_resource("Asset", data)
+      def create_asset(data)
+        create_resource('Asset', data)
       end
 
       # PUT /Asset/{id} - Update an Asset
-      def update(id, data)
-        update_resource("Asset", id, data)
+      def update_asset(id, data)
+        update_resource('Asset', id, data)
       end
 
       # DELETE /Asset/{id} - Delete an Asset
-      def delete(id)
-        delete_resource("Asset", id)
+      def delete_asset(id)
+        delete_resource('Asset', id)
       end
 
       # GET /Asset/GetAllSoftwareVersions - Get all software versions
       def software_versions(params = {})
-        get(resource_path("Asset", nil, "GetAllSoftwareVersions"), params)
+        get(resource_path('Asset', nil, 'GetAllSoftwareVersions'), params)
       end
 
       # GET /Asset/NextTag - Get next asset tag
       def next_tag(params = {})
-        get(resource_path("Asset", nil, "NextTag"), params)
+        get(resource_path('Asset', nil, 'NextTag'), params)
       end
 
       # Asset Change related methods
       # GET /AssetChange - List Asset changes
       def changes(params = {})
-        get("/AssetChange", params)
+        get('/AssetChange', params)
       end
 
       # POST /AssetChange - Create Asset change
       def create_change(data)
-        post("/AssetChange", data)
+        post('/AssetChange', data)
       end
 
       # Asset Group methods
       # GET /AssetGroup - List Asset groups
       def groups(params = {})
-        get("/AssetGroup", params)
+        get('/AssetGroup', params)
       end
 
       # GET /AssetGroup/{id} - Get specific Asset group
@@ -62,7 +62,7 @@ module HaloMspApi
 
       # POST /AssetGroup - Create Asset group
       def create_group(data)
-        post("/AssetGroup", data)
+        post('/AssetGroup', data)
       end
 
       # PUT /AssetGroup/{id} - Update Asset group
@@ -78,18 +78,18 @@ module HaloMspApi
       # Asset Software methods
       # GET /AssetSoftware - List Asset software
       def software(params = {})
-        get("/AssetSoftware", params)
+        get('/AssetSoftware', params)
       end
 
       # POST /AssetSoftware - Create Asset software
       def create_software(data)
-        post("/AssetSoftware", data)
+        post('/AssetSoftware', data)
       end
 
       # Asset Type methods
       # GET /AssetType - List Asset types
       def types(params = {})
-        get("/AssetType", params)
+        get('/AssetType', params)
       end
 
       # GET /AssetType/{id} - Get specific Asset type
@@ -99,7 +99,7 @@ module HaloMspApi
 
       # POST /AssetType - Create Asset type
       def create_type(data)
-        post("/AssetType", data)
+        post('/AssetType', data)
       end
 
       # PUT /AssetType/{id} - Update Asset type
@@ -114,13 +114,13 @@ module HaloMspApi
 
       # GET /AssetTypeInfo - Get Asset type info
       def type_info(params = {})
-        get("/AssetTypeInfo", params)
+        get('/AssetTypeInfo', params)
       end
 
       # Asset Type Mappings methods
       # GET /AssetTypeMappings - List Asset type mappings
       def type_mappings(params = {})
-        get("/AssetTypeMappings", params)
+        get('/AssetTypeMappings', params)
       end
 
       # GET /AssetTypeMappings/{id} - Get specific Asset type mapping
@@ -130,7 +130,7 @@ module HaloMspApi
 
       # POST /AssetTypeMappings - Create Asset type mapping
       def create_type_mapping(data)
-        post("/AssetTypeMappings", data)
+        post('/AssetTypeMappings', data)
       end
 
       # PUT /AssetTypeMappings/{id} - Update Asset type mapping

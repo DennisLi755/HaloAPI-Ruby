@@ -33,7 +33,7 @@ module HaloMspApi
 
       # Helper method to build resource path
       def resource_path(resource_name, id = nil, action = nil)
-        path = "/#{resource_name}"
+        path = "/api/#{resource_name}"
         path += "/#{id}" if id
         path += "/#{action}" if action
         path

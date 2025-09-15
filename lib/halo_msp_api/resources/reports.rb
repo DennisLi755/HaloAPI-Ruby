@@ -5,47 +5,47 @@ module HaloMspApi
     class Reports < Base
       # GET /Report - List of Reports
       def list(params = {})
-        list_resource("Report", params)
+        list_resource('Report', params)
       end
 
       # GET /Report/{id} - Get a specific Report
-      def get(id, params = {})
-        get_resource("Report", id, params)
+      def get_report(id, params = {})
+        get_resource('Report', id, params)
       end
 
       # POST /Report - Create a new Report
-      def create(data)
-        create_resource("Report", data)
+      def create_report(data)
+        create_resource('Report', data)
       end
 
       # PUT /Report/{id} - Update a Report
-      def update(id, data)
-        update_resource("Report", id, data)
+      def update_report(id, data)
+        update_resource('Report', id, data)
       end
 
       # DELETE /Report/{id} - Delete a Report
-      def delete(id)
-        delete_resource("Report", id)
+      def delete_report(id)
+        delete_resource('Report', id)
       end
 
       # GET /Report/Bookmark - Get Report bookmarks
       def bookmarks(params = {})
-        get(resource_path("Report", nil, "Bookmark"), params)
+        get(resource_path('Report', nil, 'Bookmark'), params)
       end
 
       # POST /Report/Bookmark - Create Report bookmark
       def create_bookmark(data)
-        post(resource_path("Report", nil, "Bookmark"), data)
+        post(resource_path('Report', nil, 'Bookmark'), data)
       end
 
       # POST /Report/createpdf - Create Report PDF
       def create_pdf(data)
-        post(resource_path("Report", nil, "createpdf"), data)
+        post(resource_path('Report', nil, 'createpdf'), data)
       end
 
       # POST /Report/print - Print Report
       def print(data)
-        post(resource_path("Report", nil, "print"), data)
+        post(resource_path('Report', nil, 'print'), data)
       end
 
       # GET /ReportData/{publishedid} - Get Report data
@@ -56,7 +56,7 @@ module HaloMspApi
       # Report Repository methods
       # GET /ReportRepository - List Report repositories
       def repositories(params = {})
-        get("/ReportRepository", params)
+        get('/ReportRepository', params)
       end
 
       # GET /ReportRepository/{id} - Get specific Report repository
@@ -66,7 +66,7 @@ module HaloMspApi
 
       # POST /ReportRepository - Create Report repository
       def create_repository(data)
-        post("/ReportRepository", data)
+        post('/ReportRepository', data)
       end
 
       # PUT /ReportRepository/{id} - Update Report repository
@@ -81,7 +81,7 @@ module HaloMspApi
 
       # GET /ReportRepository/ReportCategories - Get Report categories
       def categories(params = {})
-        get("/ReportRepository/ReportCategories", params)
+        get('/ReportRepository/ReportCategories', params)
       end
     end
   end
