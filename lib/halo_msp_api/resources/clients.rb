@@ -28,11 +28,6 @@ module HaloMspApi
         delete_resource('Client', id)
       end
 
-      # GET /Client/me - Get current Client information
-      def me(params = {})
-        get(resource_path('Client', nil, 'me'), params)
-      end
-
       # GET /Client/NewAccountsId - Get new accounts ID
       def new_accounts_id(params = {})
         get(resource_path('Client', nil, 'NewAccountsId'), params)

@@ -44,7 +44,7 @@ module HaloMspApi
       end
 
       # POST /Report/print - Print Report
-      def print(data)
+      def print_report(data)
         post(resource_path('Report', nil, 'print'), data)
       end
 

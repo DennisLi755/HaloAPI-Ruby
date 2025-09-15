@@ -28,11 +28,6 @@ module HaloMspApi
         delete_resource('Users', id)
       end
 
-      # GET /Users/me - Get current User information
-      def me(params = {})
-        get(resource_path('Users', nil, 'me'), params)
-      end
-
       # GET /Users/prefs - Get User preferences
       def preferences(params = {})
         get(resource_path('Users', nil, 'prefs'), params)
