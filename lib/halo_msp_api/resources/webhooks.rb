@@ -10,22 +10,22 @@ module HaloMspApi
       end
 
       # GET /Webhook/{id} - Get a specific Webhook
-      def get(id, params = {})
+      def get_webhook(id, params = {})
         get_resource('Webhook', id, params)
       end
 
       # POST /Webhook - Create a new Webhook
-      def create(data)
+      def create_webhook(data)
         create_resource('Webhook', data)
       end
 
       # PUT /Webhook/{id} - Update a Webhook
-      def update(id, data)
+      def update_webhook(id, data)
         update_resource('Webhook', id, data)
       end
 
       # DELETE /Webhook/{id} - Delete a Webhook
-      def delete(id)
+      def delete_webhook(id)
         delete_resource('Webhook', id)
       end
 

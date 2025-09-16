@@ -10,22 +10,22 @@ module HaloMspApi
       end
 
       # GET /Appointment/{id} - Get a specific Appointment
-      def get(id, params = {})
+      def get_appointment(id, params = {})
         get_resource('Appointment', id, params)
       end
 
       # POST /Appointment - Create a new Appointment
-      def create(data)
+      def create_appointment(data)
         create_resource('Appointment', data)
       end
 
       # PUT /Appointment/{id} - Update an Appointment
-      def update(id, data)
+      def update_appointment(id, data)
         update_resource('Appointment', id, data)
       end
 
       # DELETE /Appointment/{id} - Delete an Appointment
-      def delete(id)
+      def delete_appointment(id)
         delete_resource('Appointment', id)
       end
 

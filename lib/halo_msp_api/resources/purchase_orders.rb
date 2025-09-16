@@ -10,22 +10,22 @@ module HaloMspApi
       end
 
       # GET /PurchaseOrder/{id} - Get a specific Purchase Order
-      def get(id, params = {})
+      def get_purchase_order(id, params = {})
         get_resource('PurchaseOrder', id, params)
       end
 
       # POST /PurchaseOrder - Create a new Purchase Order
-      def create(data)
+      def create_purchase_order(data)
         create_resource('PurchaseOrder', data)
       end
 
       # PUT /PurchaseOrder/{id} - Update a Purchase Order
-      def update(id, data)
+      def update_purchase_order(id, data)
         update_resource('PurchaseOrder', id, data)
       end
 
       # DELETE /PurchaseOrder/{id} - Delete a Purchase Order
-      def delete(id)
+      def delete_purchase_order(id)
         delete_resource('PurchaseOrder', id)
       end
 

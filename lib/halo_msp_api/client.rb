@@ -11,7 +11,7 @@ module HaloMspApi
     attr_reader :configuration, :connection
 
     def initialize(configuration = nil)
-      @configuration = configuration || HaloApi.configuration
+      @configuration = configuration || HaloMspApi.configuration
       raise ConfigurationError, 'Configuration is required' unless @configuration&.valid?
 
       @connection = build_connection

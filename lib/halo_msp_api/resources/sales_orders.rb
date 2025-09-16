@@ -10,22 +10,22 @@ module HaloMspApi
       end
 
       # GET /SalesOrder/{id} - Get a specific Sales Order
-      def get(id, params = {})
+      def get_sales_order(id, params = {})
         get_resource('SalesOrder', id, params)
       end
 
       # POST /SalesOrder - Create a new Sales Order
-      def create(data)
+      def create_sales_order(data)
         create_resource('SalesOrder', data)
       end
 
       # PUT /SalesOrder/{id} - Update a Sales Order
-      def update(id, data)
+      def update_sales_order(id, data)
         update_resource('SalesOrder', id, data)
       end
 
       # DELETE /SalesOrder/{id} - Delete a Sales Order
-      def delete(id)
+      def delete_sales_order(id)
         delete_resource('SalesOrder', id)
       end
 

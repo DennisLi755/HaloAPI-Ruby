@@ -4,27 +4,27 @@ module HaloMspApi
   module Resources
     # Resource class for Products
     class Products < Base
-      # GET /Contracts - List of Products
+      # GET /Item - List of Products
       def list(params = {})
         list_resource('Item', params)
       end
 
-      # GET /Product/{id} - Get a specific Product
+      # GET /Item/{id} - Get a specific Product
       def get_product(id, params = {})
         get_resource('Item', id, params)
       end
 
-      # POST /Product - Create a new Product
+      # POST /Item - Create a new Product
       def create_product(data)
         create_resource('Item', data)
       end
 
-      # PUT /Product/{id} - Update a Product
+      # PUT /Item/{id} - Update a Product
       def update_product(id, data)
         update_resource('Item', id, data)
       end
 
-      # DELETE /Product/{id} - Delete a Product
+      # DELETE /Item/{id} - Delete a Product
       def delete_product(id)
         delete_resource('Item', id)
       end

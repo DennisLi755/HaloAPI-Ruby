@@ -10,22 +10,22 @@ module HaloMspApi
       end
 
       # GET /Supplier/{id} - Get a specific Supplier
-      def get(id, params = {})
+      def get_supplier(id, params = {})
         get_resource('Supplier', id, params)
       end
 
       # POST /Supplier - Create a new Supplier
-      def create(data)
+      def create_supplier(data)
         create_resource('Supplier', data)
       end
 
       # PUT /Supplier/{id} - Update a Supplier
-      def update(id, data)
+      def update_supplier(id, data)
         update_resource('Supplier', id, data)
       end
 
       # DELETE /Supplier/{id} - Delete a Supplier
-      def delete(id)
+      def delete_supplier(id)
         delete_resource('Supplier', id)
       end
 

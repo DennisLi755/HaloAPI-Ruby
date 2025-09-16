@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   'HaloPSA, and HaloCRM REST APIs'
   spec.homepage = 'https://github.com/evosecurity/HaloAPI-Ruby'
   spec.license = 'MIT'
-  spec.required_ruby_version = '>= 2.6.0'
+  spec.required_ruby_version = '>= 3.0.0'
 
   spec.metadata['allowed_push_host'] = 'https://rubygems.org'
   spec.metadata['homepage_uri'] = spec.homepage

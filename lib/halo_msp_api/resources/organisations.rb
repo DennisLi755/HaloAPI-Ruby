@@ -10,22 +10,22 @@ module HaloMspApi
       end
 
       # GET /Organisation/{id} - Get a specific Organisation
-      def get(id, params = {})
+      def get_organisation(id, params = {})
         get_resource('Organisation', id, params)
       end
 
       # POST /Organisation - Create a new Organisation
-      def create(data)
+      def create_organisation(data)
         create_resource('Organisation', data)
       end
 
       # PUT /Organisation/{id} - Update an Organisation
-      def update(id, data)
+      def update_organisation(id, data)
         update_resource('Organisation', id, data)
       end
 
       # DELETE /Organisation/{id} - Delete an Organisation
-      def delete(id)
+      def delete_organisation(id)
         delete_resource('Organisation', id)
       end
     end

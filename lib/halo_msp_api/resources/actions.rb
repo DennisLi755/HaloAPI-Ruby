@@ -12,22 +12,22 @@ module HaloMspApi
       end
 
       # GET /Actions/{id} - Get a specific Action
-      def get(id, params = {})
+      def get_action(id, params = {})
         get_resource('Actions', id, params)
       end
 
       # POST /Actions - Create a new Action
-      def create(data)
+      def create_action(data)
         create_resource('Actions', data)
       end
 
       # PUT /Actions/{id} - Update an Action
-      def update(id, data)
+      def update_action(id, data)
         update_resource('Actions', id, data)
       end
 
       # DELETE /Actions/{id} - Delete an Action
-      def delete(id)
+      def delete_action(id)
         delete_resource('Actions', id)
       end
 

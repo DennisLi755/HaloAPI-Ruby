@@ -10,22 +10,22 @@ module HaloMspApi
       end
 
       # GET /Agent/{id} - Get a specific Agent
-      def get(id, params = {})
+      def get_agent(id, params = {})
         get_resource('Agent', id, params)
       end
 
       # POST /Agent - Create a new Agent
-      def create(data)
+      def create_agent(data)
         create_resource('Agent', data)
       end
 
       # PUT /Agent/{id} - Update an Agent
-      def update(id, data)
+      def update_agent(id, data)
         update_resource('Agent', id, data)
       end
 
       # DELETE /Agent/{id} - Delete an Agent
-      def delete(id)
+      def delete_agent(id)
         delete_resource('Agent', id)
       end
 

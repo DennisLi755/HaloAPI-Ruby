@@ -10,22 +10,22 @@ module HaloMspApi
       end
 
       # GET /SLA/{id} - Get a specific SLA
-      def get(id, params = {})
+      def get_sla(id, params = {})
         get_resource('SLA', id, params)
       end
 
       # POST /SLA - Create a new SLA
-      def create(data)
+      def create_sla(data)
         create_resource('SLA', data)
       end
 
       # PUT /SLA/{id} - Update an SLA
-      def update(id, data)
+      def update_sla(id, data)
         update_resource('SLA', id, data)
       end
 
       # DELETE /SLA/{id} - Delete an SLA
-      def delete(id)
+      def delete_sla(id)
         delete_resource('SLA', id)
       end
 

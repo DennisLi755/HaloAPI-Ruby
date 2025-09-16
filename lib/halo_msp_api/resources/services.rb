@@ -10,22 +10,22 @@ module HaloMspApi
       end
 
       # GET /Service/{id} - Get a specific Service
-      def get(id, params = {})
+      def get_service(id, params = {})
         get_resource('Service', id, params)
       end
 
       # POST /Service - Create a new Service
-      def create(data)
+      def create_service(data)
         create_resource('Service', data)
       end
 
       # PUT /Service/{id} - Update a Service
-      def update(id, data)
+      def update_service(id, data)
         update_resource('Service', id, data)
       end
 
       # DELETE /Service/{id} - Delete a Service
-      def delete(id)
+      def delete_service(id)
         delete_resource('Service', id)
       end
 

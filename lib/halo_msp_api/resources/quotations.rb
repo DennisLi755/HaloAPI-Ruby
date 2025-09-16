@@ -10,22 +10,22 @@ module HaloMspApi
       end
 
       # GET /Quotation/{id} - Get a specific Quotation
-      def get(id, params = {})
+      def get_quotations(id, params = {})
         get_resource('Quotation', id, params)
       end
 
       # POST /Quotation - Create a new Quotation
-      def create(data)
+      def create_quotations(data)
         create_resource('Quotation', data)
       end
 
       # PUT /Quotation/{id} - Update a Quotation
-      def update(id, data)
+      def update_quotations(id, data)
         update_resource('Quotation', id, data)
       end
 
       # DELETE /Quotation/{id} - Delete a Quotation
-      def delete(id)
+      def delete_quotations(id)
         delete_resource('Quotation', id)
       end
 
