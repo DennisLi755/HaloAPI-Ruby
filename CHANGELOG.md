@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Updated `basic_usage.rb` examples to print specific data for verification
 - Updated project to adhere to rubocop linting rules
-- Removed support for Ruby 2.6 and 2.7 due to dependency imcompatibilities
+- Removed support for Ruby 2.6 and 2.7 due to dependency incompatibilities
 
 ### Deleted
 - Removed `/me/` calls from Clients and Users since those calls returned 500 from the HaloPSA API
