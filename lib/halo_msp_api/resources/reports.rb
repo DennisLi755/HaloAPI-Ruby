@@ -2,6 +2,7 @@
 
 module HaloMspApi
   module Resources
+    # Resource class for Reports
     class Reports < Base
       # GET /Report - List of Reports
       def list(params = {})

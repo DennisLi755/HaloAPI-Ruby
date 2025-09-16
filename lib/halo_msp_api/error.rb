@@ -13,6 +13,7 @@ module HaloMspApi
   class TimeoutError < Error; end
   class ConnectionError < Error; end
 
+  # Class for handling API Errors
   class APIError < Error
     attr_reader :status_code, :response_body
 

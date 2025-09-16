@@ -2,38 +2,39 @@
 
 module HaloMspApi
   module Resources
+    # Resource class for Actions
     class Actions < Base
       # GET /Actions - List of Actions
       # Parameters based on swagger.json specification
       def list(options = {})
         params = build_list_params(options)
-        get("/Actions", params)
+        get('/Actions', params)
       end
 
       # GET /Actions/{id} - Get a specific Action
       def get(id, params = {})
-        get_resource("Actions", id, params)
+        get_resource('Actions', id, params)
       end
 
       # POST /Actions - Create a new Action
       def create(data)
-        create_resource("Actions", data)
+        create_resource('Actions', data)
       end
 
       # PUT /Actions/{id} - Update an Action
       def update(id, data)
-        update_resource("Actions", id, data)
+        update_resource('Actions', id, data)
       end
 
       # DELETE /Actions/{id} - Delete an Action
       def delete(id)
-        delete_resource("Actions", id)
+        delete_resource('Actions', id)
       end
 
       # Action Reactions methods
       # GET /ActionReaction - List action reactions
       def reactions(params = {})
-        get("/ActionReaction", params)
+        get('/ActionReaction', params)
       end
 
       # GET /ActionReaction/{id} - Get specific action reaction
@@ -43,7 +44,7 @@ module HaloMspApi
 
       # POST /ActionReaction - Create action reaction
       def create_reaction(data)
-        post("/ActionReaction", data)
+        post('/ActionReaction', data)
       end
 
       # PUT /ActionReaction/{id} - Update action reaction
@@ -59,7 +60,7 @@ module HaloMspApi
       # Action Review methods
       # GET /ActionReview - List action reviews
       def reviews(params = {})
-        get("/ActionReview", params)
+        get('/ActionReview', params)
       end
 
       # GET /ActionReview/{id} - Get specific action review
@@ -69,7 +70,7 @@ module HaloMspApi
 
       # POST /ActionReview - Create action review
       def create_review(data)
-        post("/ActionReview", data)
+        post('/ActionReview', data)
       end
 
       # PUT /ActionReview/{id} - Update action review

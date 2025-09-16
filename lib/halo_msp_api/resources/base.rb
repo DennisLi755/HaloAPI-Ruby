@@ -2,6 +2,7 @@
 
 module HaloMspApi
   module Resources
+    # Base class for all resources
     class Base
       attr_reader :client
 

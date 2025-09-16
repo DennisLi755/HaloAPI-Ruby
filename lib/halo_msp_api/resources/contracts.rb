@@ -2,6 +2,7 @@
 
 module HaloMspApi
   module Resources
+    # Resource class for Contracts
     class Contracts < Base
       # GET /Contracts - List of Contracts
       def list(params = {})

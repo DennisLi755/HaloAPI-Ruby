@@ -2,36 +2,37 @@
 
 module HaloMspApi
   module Resources
+    # Resource class for SLAs
     class Slas < Base
       # GET /SLA - List of SLAs
       def list(params = {})
-        list_resource("SLA", params)
+        list_resource('SLA', params)
       end
 
       # GET /SLA/{id} - Get a specific SLA
       def get(id, params = {})
-        get_resource("SLA", id, params)
+        get_resource('SLA', id, params)
       end
 
       # POST /SLA - Create a new SLA
       def create(data)
-        create_resource("SLA", data)
+        create_resource('SLA', data)
       end
 
       # PUT /SLA/{id} - Update an SLA
       def update(id, data)
-        update_resource("SLA", id, data)
+        update_resource('SLA', id, data)
       end
 
       # DELETE /SLA/{id} - Delete an SLA
       def delete(id)
-        delete_resource("SLA", id)
+        delete_resource('SLA', id)
       end
 
       # SLA Policy methods
       # GET /SLAPolicy - List SLA policies
       def policies(params = {})
-        get("/SLAPolicy", params)
+        get('/SLAPolicy', params)
       end
 
       # GET /SLAPolicy/{id} - Get specific SLA policy
@@ -41,7 +42,7 @@ module HaloMspApi
 
       # POST /SLAPolicy - Create SLA policy
       def create_policy(data)
-        post("/SLAPolicy", data)
+        post('/SLAPolicy', data)
       end
 
       # PUT /SLAPolicy/{id} - Update SLA policy
@@ -57,7 +58,7 @@ module HaloMspApi
       # SLA Target methods
       # GET /SLATarget - List SLA targets
       def targets(params = {})
-        get("/SLATarget", params)
+        get('/SLATarget', params)
       end
 
       # GET /SLATarget/{id} - Get specific SLA target
@@ -67,7 +68,7 @@ module HaloMspApi
 
       # POST /SLATarget - Create SLA target
       def create_target(data)
-        post("/SLATarget", data)
+        post('/SLATarget', data)
       end
 
       # PUT /SLATarget/{id} - Update SLA target

@@ -2,6 +2,7 @@
 
 module HaloMspApi
   module Resources
+    # Resource class for Users
     class Users < Base
       # GET /Users - List of Users
       def list(params = {})

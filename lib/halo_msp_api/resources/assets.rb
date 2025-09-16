@@ -2,6 +2,7 @@
 
 module HaloMspApi
   module Resources
+    # Resource class for Assets
     class Assets < Base
       # GET /Asset - List of Assets
       def list(params = {})

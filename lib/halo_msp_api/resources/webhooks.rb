@@ -2,41 +2,42 @@
 
 module HaloMspApi
   module Resources
+    # Resource class for Webhooks
     class Webhooks < Base
       # GET /Webhook - List of Webhooks
       def list(params = {})
-        list_resource("Webhook", params)
+        list_resource('Webhook', params)
       end
 
       # GET /Webhook/{id} - Get a specific Webhook
       def get(id, params = {})
-        get_resource("Webhook", id, params)
+        get_resource('Webhook', id, params)
       end
 
       # POST /Webhook - Create a new Webhook
       def create(data)
-        create_resource("Webhook", data)
+        create_resource('Webhook', data)
       end
 
       # PUT /Webhook/{id} - Update a Webhook
       def update(id, data)
-        update_resource("Webhook", id, data)
+        update_resource('Webhook', id, data)
       end
 
       # DELETE /Webhook/{id} - Delete a Webhook
       def delete(id)
-        delete_resource("Webhook", id)
+        delete_resource('Webhook', id)
       end
 
       # POST /Webhook/test - Test a Webhook
       def test(data)
-        post(resource_path("Webhook", nil, "test"), data)
+        post(resource_path('Webhook', nil, 'test'), data)
       end
 
       # Webhook Event methods
       # GET /WebhookEvent - List Webhook events
       def events(params = {})
-        get("/WebhookEvent", params)
+        get('/WebhookEvent', params)
       end
 
       # GET /WebhookEvent/{id} - Get specific Webhook event
@@ -46,7 +47,7 @@ module HaloMspApi
 
       # POST /WebhookEvent - Create Webhook event
       def create_event(data)
-        post("/WebhookEvent", data)
+        post('/WebhookEvent', data)
       end
 
       # PUT /WebhookEvent/{id} - Update Webhook event
@@ -62,7 +63,7 @@ module HaloMspApi
       # Webhook Subscription methods
       # GET /WebhookSubscription - List Webhook subscriptions
       def subscriptions(params = {})
-        get("/WebhookSubscription", params)
+        get('/WebhookSubscription', params)
       end
 
       # GET /WebhookSubscription/{id} - Get specific Webhook subscription
@@ -72,7 +73,7 @@ module HaloMspApi
 
       # POST /WebhookSubscription - Create Webhook subscription
       def create_subscription(data)
-        post("/WebhookSubscription", data)
+        post('/WebhookSubscription', data)
       end
 
       # PUT /WebhookSubscription/{id} - Update Webhook subscription

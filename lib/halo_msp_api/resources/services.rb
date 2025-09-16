@@ -2,41 +2,42 @@
 
 module HaloMspApi
   module Resources
+    # Resource class for Services
     class Services < Base
       # GET /Service - List of Services
       def list(params = {})
-        list_resource("Service", params)
+        list_resource('Service', params)
       end
 
       # GET /Service/{id} - Get a specific Service
       def get(id, params = {})
-        get_resource("Service", id, params)
+        get_resource('Service', id, params)
       end
 
       # POST /Service - Create a new Service
       def create(data)
-        create_resource("Service", data)
+        create_resource('Service', data)
       end
 
       # PUT /Service/{id} - Update a Service
       def update(id, data)
-        update_resource("Service", id, data)
+        update_resource('Service', id, data)
       end
 
       # DELETE /Service/{id} - Delete a Service
       def delete(id)
-        delete_resource("Service", id)
+        delete_resource('Service', id)
       end
 
       # POST /Service/unsubscribe - Unsubscribe from Service
       def unsubscribe(data)
-        post(resource_path("Service", nil, "unsubscribe"), data)
+        post(resource_path('Service', nil, 'unsubscribe'), data)
       end
 
       # Service Availability methods
       # GET /ServiceAvailability - List Service availabilities
       def availabilities(params = {})
-        get("/ServiceAvailability", params)
+        get('/ServiceAvailability', params)
       end
 
       # GET /ServiceAvailability/{id} - Get specific Service availability
@@ -46,7 +47,7 @@ module HaloMspApi
 
       # POST /ServiceAvailability - Create Service availability
       def create_availability(data)
-        post("/ServiceAvailability", data)
+        post('/ServiceAvailability', data)
       end
 
       # PUT /ServiceAvailability/{id} - Update Service availability
@@ -62,7 +63,7 @@ module HaloMspApi
       # Service Category methods
       # GET /ServiceCategory - List Service categories
       def categories(params = {})
-        get("/ServiceCategory", params)
+        get('/ServiceCategory', params)
       end
 
       # GET /ServiceCategory/{id} - Get specific Service category
@@ -72,7 +73,7 @@ module HaloMspApi
 
       # POST /ServiceCategory - Create Service category
       def create_category(data)
-        post("/ServiceCategory", data)
+        post('/ServiceCategory', data)
       end
 
       # PUT /ServiceCategory/{id} - Update Service category
@@ -88,7 +89,7 @@ module HaloMspApi
       # Service Request Details methods
       # GET /ServiceRequestDetails - List Service request details
       def request_details(params = {})
-        get("/ServiceRequestDetails", params)
+        get('/ServiceRequestDetails', params)
       end
 
       # GET /ServiceRequestDetails/{id} - Get specific Service request details
@@ -98,7 +99,7 @@ module HaloMspApi
 
       # POST /ServiceRequestDetails - Create Service request details
       def create_request_detail(data)
-        post("/ServiceRequestDetails", data)
+        post('/ServiceRequestDetails', data)
       end
 
       # PUT /ServiceRequestDetails/{id} - Update Service request details
@@ -114,18 +115,18 @@ module HaloMspApi
       # Service Restriction methods
       # GET /ServiceRestriction - List Service restrictions
       def restrictions(params = {})
-        get("/ServiceRestriction", params)
+        get('/ServiceRestriction', params)
       end
 
       # POST /ServiceRestriction - Create Service restriction
       def create_restriction(data)
-        post("/ServiceRestriction", data)
+        post('/ServiceRestriction', data)
       end
 
       # Service Status methods
       # GET /ServiceStatus - List Service statuses
       def statuses(params = {})
-        get("/ServiceStatus", params)
+        get('/ServiceStatus', params)
       end
 
       # GET /ServiceStatus/{id} - Get specific Service status
@@ -135,7 +136,7 @@ module HaloMspApi
 
       # POST /ServiceStatus - Create Service status
       def create_status(data)
-        post("/ServiceStatus", data)
+        post('/ServiceStatus', data)
       end
 
       # PUT /ServiceStatus/{id} - Update Service status
@@ -150,7 +151,7 @@ module HaloMspApi
 
       # GET /ServiceStatus/Subscribe - List Service status subscriptions
       def status_subscriptions(params = {})
-        get("/ServiceStatus/Subscribe", params)
+        get('/ServiceStatus/Subscribe', params)
       end
 
       # GET /ServiceStatus/Subscribe/{id} - Get specific Service status subscription
@@ -160,7 +161,7 @@ module HaloMspApi
 
       # POST /ServiceStatus/Subscribe - Create Service status subscription
       def create_status_subscription(data)
-        post("/ServiceStatus/Subscribe", data)
+        post('/ServiceStatus/Subscribe', data)
       end
 
       # PUT /ServiceStatus/Subscribe/{id} - Update Service status subscription

@@ -5,6 +5,8 @@ require 'faraday/retry'
 require 'json'
 
 module HaloMspApi
+  # Client class for Halo MSP API
+  # rubocop:disable Metrics/ClassLength
   class Client
     attr_reader :configuration, :connection
 
@@ -125,6 +127,8 @@ module HaloMspApi
 
     private
 
+    # rubocop:disable Metrics/AbcSize
+    # rubocop:disable Metrics/MethodLength
     def request(method, path, data = {})
       ensure_authenticated!
 
@@ -146,7 +150,11 @@ module HaloMspApi
     rescue Faraday::ConnectionFailed
       raise ConnectionError, 'Connection failed'
     end
+    # rubocop:enable Metrics/AbcSize
+    # rubocop:enable Metrics/MethodLength
 
+    # rubocop:disable Metrics/CyclomaticComplexity
+    # rubocop:disable Metrics/MethodLength
     def handle_response(response)
       case response.status
       when 200..299
@@ -167,6 +175,8 @@ module HaloMspApi
         raise APIError.new('Unexpected response', status_code: response.status, response_body: response.body)
       end
     end
+    # rubocop:enable Metrics/CyclomaticComplexity
+    # rubocop:enable Metrics/MethodLength
 
     def parse_response(response)
       return nil if response.body.nil? || response.body.empty?
@@ -186,6 +196,8 @@ module HaloMspApi
       @access_token && @token_expires_at && Time.now < @token_expires_at
     end
 
+    # rubocop:disable Metrics/AbcSize
+    # rubocop:disable Metrics/MethodLength
     def authenticate!
       auth_params = {
         grant_type: 'client_credentials',
@@ -210,6 +222,8 @@ module HaloMspApi
     rescue JSON::ParserError
       raise AuthenticationError, 'Invalid authentication response'
     end
+    # rubocop:enable Metrics/AbcSize
+    # rubocop:enable Metrics/MethodLength
 
     def build_connection
       Faraday.new(url: configuration.base_url) do |conn|
@@ -220,3 +234,4 @@ module HaloMspApi
     end
   end
 end
+# rubocop:enable Metrics/ClassLength

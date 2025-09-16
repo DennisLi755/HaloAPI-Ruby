@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module HaloMspApi
+  # HaloMspApi Configuration Class
   class Configuration
     attr_accessor :base_url, :client_id, :client_secret, :tenant, :timeout, :retries
 

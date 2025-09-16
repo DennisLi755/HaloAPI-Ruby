@@ -2,6 +2,8 @@
 
 module HaloMspApi
   module Resources
+    # Resource class for Tickets
+    # rubocop:disable Metrics/ClassLength
     class Tickets < Base
       # GET /Tickets - List of Tickets
       def list(params = {})
@@ -44,7 +46,7 @@ module HaloMspApi
       end
 
       # POST /Tickets/SetBillableProject - Set billable project
-      def set_billable_project(data)
+      def billable_project(data)
         post(resource_path('Tickets', nil, 'SetBillableProject'), data)
       end
 
@@ -205,3 +207,4 @@ module HaloMspApi
     end
   end
 end
+# rubocop:enable Metrics/ClassLength

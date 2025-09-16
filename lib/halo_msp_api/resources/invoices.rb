@@ -2,6 +2,7 @@
 
 module HaloMspApi
   module Resources
+    # Resource class for Invoices
     class Invoices < Base
       # GET /Invoice - List of Invoices
       def list(params = {})

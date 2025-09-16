@@ -29,6 +29,7 @@ require_relative 'halo_msp_api/resources/tickets'
 require_relative 'halo_msp_api/resources/users'
 require_relative 'halo_msp_api/resources/webhooks'
 
+# Main Halo MSP API module
 module HaloMspApi
   class << self
     attr_accessor :configuration

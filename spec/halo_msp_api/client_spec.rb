@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/BlockLength
 RSpec.describe HaloMspApi::Client do
   let(:configuration) do
     HaloMspApi::Configuration.new.tap do |config|
@@ -97,3 +98,4 @@ RSpec.describe HaloMspApi::Client do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

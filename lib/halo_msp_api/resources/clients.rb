@@ -2,6 +2,7 @@
 
 module HaloMspApi
   module Resources
+    # Resource class for Clients
     class Clients < Base
       # GET /Client - List of Clients
       def list(params = {})

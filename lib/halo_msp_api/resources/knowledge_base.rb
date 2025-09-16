@@ -2,10 +2,11 @@
 
 module HaloMspApi
   module Resources
+    # Resource class for Knowledge Base
     class KnowledgeBase < Base
       # GET /KBArticle - List of Knowledge Base Articles
       def articles(params = {})
-        get("/KBArticle", params)
+        get('/KBArticle', params)
       end
 
       # GET /KBArticle/{id} - Get a specific Knowledge Base Article
@@ -15,7 +16,7 @@ module HaloMspApi
 
       # POST /KBArticle - Create a new Knowledge Base Article
       def create_article(data)
-        post("/KBArticle", data)
+        post('/KBArticle', data)
       end
 
       # PUT /KBArticle/{id} - Update a Knowledge Base Article
@@ -30,13 +31,13 @@ module HaloMspApi
 
       # GET /KBArticle/Search - Search Knowledge Base Articles
       def search_articles(params = {})
-        get("/KBArticle/Search", params)
+        get('/KBArticle/Search', params)
       end
 
       # Knowledge Base Category methods
       # GET /KBCategory - List Knowledge Base Categories
       def categories(params = {})
-        get("/KBCategory", params)
+        get('/KBCategory', params)
       end
 
       # GET /KBCategory/{id} - Get specific Knowledge Base Category
@@ -46,7 +47,7 @@ module HaloMspApi
 
       # POST /KBCategory - Create Knowledge Base Category
       def create_category(data)
-        post("/KBCategory", data)
+        post('/KBCategory', data)
       end
 
       # PUT /KBCategory/{id} - Update Knowledge Base Category
@@ -62,7 +63,7 @@ module HaloMspApi
       # Knowledge Base Keywords methods
       # GET /KBKeywords - List Knowledge Base Keywords
       def keywords(params = {})
-        get("/KBKeywords", params)
+        get('/KBKeywords', params)
       end
 
       # GET /KBKeywords/{id} - Get specific Knowledge Base Keywords
@@ -72,7 +73,7 @@ module HaloMspApi
 
       # POST /KBKeywords - Create Knowledge Base Keywords
       def create_keyword(data)
-        post("/KBKeywords", data)
+        post('/KBKeywords', data)
       end
 
       # PUT /KBKeywords/{id} - Update Knowledge Base Keywords

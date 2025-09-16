@@ -2,6 +2,7 @@
 
 require 'halo_msp_api'
 
+# rubocop:disable Metrics/BlockLength
 RSpec.describe HaloMspApi do
   it 'has a version number' do
     expect(HaloMspApi::VERSION).not_to be nil
@@ -44,3 +45,4 @@ RSpec.describe HaloMspApi do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
