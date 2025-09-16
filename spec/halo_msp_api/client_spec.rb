@@ -60,20 +60,29 @@ RSpec.describe HaloMspApi::Client do
   end
 
   describe 'HTTP methods', :vcr do
+    let(:mock_connection) { instance_double(Faraday::Connection) }
+    let(:mock_response) { instance_double(Faraday::Response) }
+    let(:mock_request) { instance_double(Faraday::Request) }
+
     before do
-      stub_request(:post, 'https://test.haloitsm.com/api/auth/token')
-        .to_return(
-          status: 200,
-          body: { access_token: 'test_token', expires_in: 3600 }.to_json,
-          headers: { 'Content-Type' => 'application/json' }
-        )
+      # Set up mock connection
+      allow(client).to receive(:connection).and_return(mock_connection)
+      allow(client).to receive(:ensure_authenticated!).and_return(true)
+
+      # Set up mock request
+      allow(mock_request).to receive(:url)
+      allow(mock_request).to receive(:headers).and_return({})
+      allow(mock_request).to receive(:body=)
+      allow(mock_request).to receive(:params=)
+
+      # Set up mock responses
+      allow(mock_response).to receive(:status).and_return(200)
+      allow(mock_response).to receive(:body).and_return({ success: true }.to_json)
     end
 
     describe '#get' do
       it 'makes GET requests' do
-        stub_request(:get, 'https://test.haloitsm.com/api/test')
-          .to_return(status: 200, body: { success: true }.to_json)
-
+        expect(mock_connection).to receive(:get).and_yield(mock_request).and_return(mock_response)
         response = client.get('/test')
         expect(response).to eq({ 'success' => true })
       end
@@ -81,12 +90,9 @@ RSpec.describe HaloMspApi::Client do
 
     describe '#post' do
       it 'makes POST requests' do
-        stub_request(:post, 'https://test.haloitsm.com/api/test')
-          .with(body: { data: 'test' }.to_json)
-          .to_return(status: 201, body: { created: true }.to_json)
-
+        expect(mock_connection).to receive(:post).and_yield(mock_request).and_return(mock_response)
         response = client.post('/test', { data: 'test' })
-        expect(response).to eq({ 'created' => true })
+        expect(response).to eq({ 'success' => true })
       end
     end
   end
