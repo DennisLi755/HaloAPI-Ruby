@@ -5,12 +5,12 @@ module HaloMspApi
     # Resource class for Organisations
     class Organisations < Base
       # GET /Organisation - List of Organisations
-      def list(params = {})
+      def organisations(params = {})
         list_resource('Organisation', params)
       end
 
       # GET /Organisation/{id} - Get a specific Organisation
-      def get_organisation(id, params = {})
+      def organisation(id, params = {})
         get_resource('Organisation', id, params)
       end
 

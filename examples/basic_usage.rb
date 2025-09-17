@@ -15,7 +15,7 @@ HaloMspApi.configure do |config|
 end
 
 # Get a client instance
-client = HaloMspApi.client
+instance = HaloMspApi.client
 
 begin
   puts '=== HaloApi Ruby Gem Example Usage ==='
@@ -23,7 +23,7 @@ begin
 
   # Example 1: List tickets
   puts '1. Fetching tickets...'
-  tickets = client.tickets.list(count: 5)
+  tickets = instance.tickets.tickets(count: 5)
   puts "Found #{tickets['tickets']&.length || 0} tickets"
   if tickets['tickets']&.any?
     puts 'Ticket summaries:'
@@ -35,7 +35,7 @@ begin
 
   # Example 2: List users
   puts '2. Fetching users...'
-  users = client.users.list(count: 5)
+  users = instance.users.users(count: 5)
   puts "Found #{users['users']&.length || 0} users"
   if users['users']&.any?
     puts 'User names:'
@@ -45,21 +45,21 @@ begin
   end
   puts
 
-  # Example 3: List clients
+  # Example 3: List companies
   puts '3. Fetching clients...'
-  clients = client.clients.list(count: 5)
+  clients = instance.clients.clients(count: 5)
   puts "Found #{clients['clients']&.length || 0} clients"
   if clients['clients']&.any?
     puts 'Client names:'
-    clients['clients'].each do |client|
-      puts "- #{client['name'] || 'Unknown'}"
+    clients['clients'].each do |client_item|
+      puts "- #{client_item['name'] || 'Unknown'}"
     end
   end
   puts
 
   # Example 4: List assets
   puts '4. Fetching assets...'
-  assets = client.assets.list(count: 5)
+  assets = instance.assets.assets(count: 5)
   puts "Found #{assets['assets']&.length || 0} assets"
   if assets['assets']&.any?
     puts 'Asset Inventory Number & Client Association:'
@@ -71,7 +71,7 @@ begin
 
   # Example 5: List invoices
   puts '5. Fetching invoices...'
-  invoices = client.invoices.list(count: 5)
+  invoices = instance.invoices.invoices(count: 5)
   puts "Found #{invoices['invoices']&.length || 0} invoices"
   if invoices['invoices']&.any?
     puts 'Invoice ID and Client Association:'
@@ -83,7 +83,7 @@ begin
 
   # Example 6: Get reports
   puts '6. Fetching reports...'
-  reports = client.reports.list(count: 5)
+  reports = instance.reports.reports(count: 5)
   puts "Found #{reports['reports']&.length || 0} reports"
   if reports['reports']&.any?
     puts 'Report Names:'
@@ -95,7 +95,7 @@ begin
 
   # Example 7: Get contracts
   puts '7. Fetching contracts...'
-  contracts = client.contracts.list(count: 5)
+  contracts = instance.clients.contracts(count: 5)
   puts "Found #{contracts['contracts']&.length || 0} contracts"
   if contracts['contracts']&.any?
     puts 'Contract Client & Active:'
@@ -105,9 +105,9 @@ begin
   end
   puts
 
-  # Example 7: Get products
+  # Example 8: Get products
   puts '8. Fetching products...'
-  products = client.products.list(count: 5)
+  products = instance.products.products(count: 5)
   puts "Found #{products['items']&.length || 0} products"
   if products['items']&.any?
     puts 'Product Names:'

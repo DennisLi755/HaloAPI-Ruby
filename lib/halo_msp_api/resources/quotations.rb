@@ -5,27 +5,27 @@ module HaloMspApi
     # Resource class for Quotations
     class Quotations < Base
       # GET /Quotation - List of Quotations
-      def list(params = {})
+      def quotations(params = {})
         list_resource('Quotation', params)
       end
 
       # GET /Quotation/{id} - Get a specific Quotation
-      def get_quotations(id, params = {})
+      def quotation(id, params = {})
         get_resource('Quotation', id, params)
       end
 
       # POST /Quotation - Create a new Quotation
-      def create_quotations(data)
+      def create_quotation(data)
         create_resource('Quotation', data)
       end
 
       # PUT /Quotation/{id} - Update a Quotation
-      def update_quotations(id, data)
+      def update_quotation(id, data)
         update_resource('Quotation', id, data)
       end
 
       # DELETE /Quotation/{id} - Delete a Quotation
-      def delete_quotations(id)
+      def delete_quotation(id)
         delete_resource('Quotation', id)
       end
 

@@ -5,12 +5,12 @@ module HaloMspApi
     # Resource class for Appointments
     class Appointments < Base
       # GET /Appointment - List of Appointments
-      def list(params = {})
+      def appointments(params = {})
         list_resource('Appointment', params)
       end
 
       # GET /Appointment/{id} - Get a specific Appointment
-      def get_appointment(id, params = {})
+      def appointment(id, params = {})
         get_resource('Appointment', id, params)
       end
 

@@ -5,12 +5,12 @@ module HaloMspApi
     # Resource class for Purchase Orders
     class PurchaseOrders < Base
       # GET /PurchaseOrder - List of Purchase Orders
-      def list(params = {})
+      def purchase_orders(params = {})
         list_resource('PurchaseOrder', params)
       end
 
       # GET /PurchaseOrder/{id} - Get a specific Purchase Order
-      def get_purchase_order(id, params = {})
+      def purchase_order(id, params = {})
         get_resource('PurchaseOrder', id, params)
       end
 

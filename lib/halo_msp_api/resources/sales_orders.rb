@@ -5,12 +5,12 @@ module HaloMspApi
     # Resource class for Sales Orders
     class SalesOrders < Base
       # GET /SalesOrder - List of Sales Orders
-      def list(params = {})
+      def sales_orders(params = {})
         list_resource('SalesOrder', params)
       end
 
       # GET /SalesOrder/{id} - Get a specific Sales Order
-      def get_sales_order(id, params = {})
+      def sales_order(id, params = {})
         get_resource('SalesOrder', id, params)
       end
 

@@ -186,7 +186,6 @@ The gem provides access to the following Halo API resources:
 - **Sales Orders** - `client.sales_orders` - Sales order management
 - **Suppliers** - `client.suppliers` - Supplier and contract management
 - **Products** - `client.products` - Product management
-- **Contracts** - `client.contracts` - Contract management
 
 ### Service Management
 - **Appointments** - `client.appointments` - Scheduling and availability

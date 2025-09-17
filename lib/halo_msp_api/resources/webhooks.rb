@@ -5,12 +5,12 @@ module HaloMspApi
     # Resource class for Webhooks
     class Webhooks < Base
       # GET /Webhook - List of Webhooks
-      def list(params = {})
+      def webhooks(params = {})
         list_resource('Webhook', params)
       end
 
       # GET /Webhook/{id} - Get a specific Webhook
-      def get_webhook(id, params = {})
+      def webhook(id, params = {})
         get_resource('Webhook', id, params)
       end
 
@@ -37,53 +37,53 @@ module HaloMspApi
       # Webhook Event methods
       # GET /WebhookEvent - List Webhook events
       def events(params = {})
-        get('/WebhookEvent', params)
+        get('WebhookEvent', params)
       end
 
       # GET /WebhookEvent/{id} - Get specific Webhook event
       def event(id, params = {})
-        get("/WebhookEvent/#{id}", params)
+        get("WebhookEvent/#{id}", params)
       end
 
       # POST /WebhookEvent - Create Webhook event
       def create_event(data)
-        post('/WebhookEvent', data)
+        post('WebhookEvent', data)
       end
 
       # PUT /WebhookEvent/{id} - Update Webhook event
       def update_event(id, data)
-        put("/WebhookEvent/#{id}", data)
+        put("WebhookEvent/#{id}", data)
       end
 
       # DELETE /WebhookEvent/{id} - Delete Webhook event
       def delete_event(id)
-        delete("/WebhookEvent/#{id}")
+        delete("WebhookEvent/#{id}")
       end
 
       # Webhook Subscription methods
       # GET /WebhookSubscription - List Webhook subscriptions
       def subscriptions(params = {})
-        get('/WebhookSubscription', params)
+        get('WebhookSubscription', params)
       end
 
       # GET /WebhookSubscription/{id} - Get specific Webhook subscription
       def subscription(id, params = {})
-        get("/WebhookSubscription/#{id}", params)
+        get("WebhookSubscription/#{id}", params)
       end
 
       # POST /WebhookSubscription - Create Webhook subscription
       def create_subscription(data)
-        post('/WebhookSubscription', data)
+        post('WebhookSubscription', data)
       end
 
       # PUT /WebhookSubscription/{id} - Update Webhook subscription
       def update_subscription(id, data)
-        put("/WebhookSubscription/#{id}", data)
+        put("WebhookSubscription/#{id}", data)
       end
 
       # DELETE /WebhookSubscription/{id} - Delete Webhook subscription
       def delete_subscription(id)
-        delete("/WebhookSubscription/#{id}")
+        delete("WebhookSubscription/#{id}")
       end
     end
   end

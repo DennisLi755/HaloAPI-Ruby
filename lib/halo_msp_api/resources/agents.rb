@@ -5,12 +5,12 @@ module HaloMspApi
     # Resource class for Agents
     class Agents < Base
       # GET /Agent - List of Agents
-      def list(params = {})
+      def agents(params = {})
         list_resource('Agent', params)
       end
 
       # GET /Agent/{id} - Get a specific Agent
-      def get_agent(id, params = {})
+      def agent(id, params = {})
         get_resource('Agent', id, params)
       end
 
@@ -47,54 +47,54 @@ module HaloMspApi
       # Agent Check-in related methods
       # GET /AgentCheckIn - List Agent check-ins
       def check_ins(params = {})
-        get('/AgentCheckIn', params)
+        get('AgentCheckIn', params)
       end
 
       # GET /AgentCheckIn/{id} - Get specific Agent check-in
       def check_in(id, params = {})
-        get("/AgentCheckIn/#{id}", params)
+        get("AgentCheckIn/#{id}", params)
       end
 
       # POST /AgentCheckIn - Create Agent check-in
       def create_check_in(data)
-        post('/AgentCheckIn', data)
+        post('AgentCheckIn', data)
       end
 
       # Agent Event Subscription methods
       # GET /AgentEventSubscription - List Agent event subscriptions
       def event_subscriptions(params = {})
-        get('/AgentEventSubscription', params)
+        get('AgentEventSubscription', params)
       end
 
       # GET /AgentEventSubscription/{id} - Get specific Agent event subscription
       def event_subscription(id, params = {})
-        get("/AgentEventSubscription/#{id}", params)
+        get("AgentEventSubscription/#{id}", params)
       end
 
       # POST /AgentEventSubscription - Create Agent event subscription
       def create_event_subscription(data)
-        post('/AgentEventSubscription', data)
+        post('AgentEventSubscription', data)
       end
 
       # Agent Presence related methods
       # GET /AgentPresenceRule - List Agent presence rules
       def presence_rules(params = {})
-        get('/AgentPresenceRule', params)
+        get('AgentPresenceRule', params)
       end
 
       # GET /AgentPresenceSubscription - List Agent presence subscriptions
       def presence_subscriptions(params = {})
-        get('/AgentPresenceSubscription', params)
+        get('AgentPresenceSubscription', params)
       end
 
       # GET /AgentPresenceSubscription/{id} - Get specific Agent presence subscription
       def presence_subscription(id, params = {})
-        get("/AgentPresenceSubscription/#{id}", params)
+        get("AgentPresenceSubscription/#{id}", params)
       end
 
       # POST /AgentPresenceSubscription - Create Agent presence subscription
       def create_presence_subscription(data)
-        post('/AgentPresenceSubscription', data)
+        post('AgentPresenceSubscription', data)
       end
     end
   end

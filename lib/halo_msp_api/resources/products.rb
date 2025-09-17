@@ -5,12 +5,12 @@ module HaloMspApi
     # Resource class for Products
     class Products < Base
       # GET /Item - List of Products
-      def list(params = {})
+      def products(params = {})
         list_resource('Item', params)
       end
 
       # GET /Item/{id} - Get a specific Product
-      def get_product(id, params = {})
+      def product(id, params = {})
         get_resource('Item', id, params)
       end
 
