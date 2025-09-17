@@ -55,13 +55,13 @@ client = HaloApi::Client.new(config)
 
 ```ruby
 # List all tickets
-tickets = client.tickets.list
+tickets = client.tickets.tickets
 
 # Get a specific ticket
-ticket = client.tickets.get(123)
+ticket = client.tickets.ticket(123)
 
 # Create a new ticket
-new_ticket = client.tickets.create({
+new_ticket = client.tickets.create_ticket({
   summary: "New ticket",
   details: "Ticket description",
   tickettype_id: 1,
@@ -69,23 +69,20 @@ new_ticket = client.tickets.create({
 })
 
 # Update a ticket
-client.tickets.update(123, { summary: "Updated summary" })
+client.tickets.update_ticket(123, { summary: "Updated summary" })
 
 # Delete a ticket
-client.tickets.delete(123)
+client.tickets.delete_ticket(123)
 ```
 
 ### Working with Users
 
 ```ruby
 # List all users
-users = client.users.list
-
-# Get current user
-current_user = client.users.me
+users = client.users.users
 
 # Create a new user
-new_user = client.users.create({
+new_user = client.users.create_user({
   name: "John Doe",
   emailaddress: "john@example.com"
 })
@@ -95,13 +92,13 @@ new_user = client.users.create({
 
 ```ruby
 # List all assets
-assets = client.assets.list
+assets = client.assets.assets
 
 # Get a specific asset
-asset = client.assets.get(123)
+asset = client.assets.asset(123)
 
 # Create a new asset
-new_asset = client.assets.create({
+new_asset = client.assets.create_asset({
   inventory_number: "ASSET001",
   assettype_id: 1
 })
@@ -111,13 +108,13 @@ new_asset = client.assets.create({
 
 ```ruby
 # List all clients
-clients = client.clients.list
+clients = client.clients.clients
 
 # Get a specific client
-client_record = client.clients.get(123)
+client_record = client.clients.client(123)
 
 # Create a new client
-new_client = client.clients.create({
+new_client = client.clients.create_client({
   name: "ACME Corp",
   website: "https://acme.com"
 })
@@ -127,13 +124,13 @@ new_client = client.clients.create({
 
 ```ruby
 # List all invoices
-invoices = client.invoices.list
+invoices = client.invoices.invoices
 
 # Get a specific invoice
-invoice = client.invoices.get(123)
+invoice = client.invoices.invoice(123)
 
 # Create a new invoice
-new_invoice = client.invoices.create({
+new_invoice = client.invoices.create_invoice({
   client_id: 1,
   invoicedate: "2023-01-01"
 })
@@ -146,10 +143,10 @@ pdf_data = client.invoices.pdf(123)
 
 ```ruby
 # List all reports
-reports = client.reports.list
+reports = client.reports.reports
 
 # Get a specific report
-report = client.reports.get(123)
+report = client.reports.report(123)
 
 # Get report data
 report_data = client.reports.data("published_report_id")
@@ -159,10 +156,10 @@ report_data = client.reports.data("published_report_id")
 
 ```ruby
 # Get Azure AD data
-azure_data = client.integrations.get_azure_ad
+azure_data = client.integrations.azure_ad
 
 # Get Slack data
-slack_data = client.integrations.get_slack
+slack_data = client.integrations.slack
 
 # Import Jira data
 client.integrations.import_jira(jira_data)
@@ -210,7 +207,7 @@ The gem provides specific error classes for different types of API errors:
 
 ```ruby
 begin
-  ticket = client.tickets.get(999999)
+  ticket = client.tickets.ticket(999999)
 rescue HaloMspApi::NotFoundError
   puts "Ticket not found"
 rescue HaloMspApi::AuthenticationError
