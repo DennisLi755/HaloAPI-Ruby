@@ -187,6 +187,7 @@ The gem provides access to the following Halo API resources:
 - **Quotations** - `client.quotations` - Quote management, approvals
 - **Sales Orders** - `client.sales_orders` - Sales order management
 - **Suppliers** - `client.suppliers` - Supplier and contract management
+- **Products** - `client.products` - Product management
 
 ### Service Management
 - **Appointments** - `client.appointments` - Scheduling and availability

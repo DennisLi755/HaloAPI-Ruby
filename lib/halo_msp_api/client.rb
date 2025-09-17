@@ -1,16 +1,18 @@
 # frozen_string_literal: true
 
-require "faraday"
-require "faraday/retry"
-require "json"
+require 'faraday'
+require 'faraday/retry'
+require 'json'
 
 module HaloMspApi
+  # Client class for Halo MSP API
+  # rubocop:disable Metrics/ClassLength
   class Client
     attr_reader :configuration, :connection
 
     def initialize(configuration = nil)
-      @configuration = configuration || HaloApi.configuration
-      raise ConfigurationError, "Configuration is required" unless @configuration&.valid?
+      @configuration = configuration || HaloMspApi.configuration
+      raise ConfigurationError, 'Configuration is required' unless @configuration&.valid?
 
       @connection = build_connection
       @access_token = nil
@@ -38,6 +40,10 @@ module HaloMspApi
       @clients ||= Resources::Clients.new(self)
     end
 
+    def contracts
+      @contracts ||= Resources::Contracts.new(self)
+    end
+
     def integrations
       @integrations ||= Resources::Integrations.new(self)
     end
@@ -52,6 +58,10 @@ module HaloMspApi
 
     def organisations
       @organisations ||= Resources::Organisations.new(self)
+    end
+
+    def products
+      @products ||= Resources::Products.new(self)
     end
 
     def purchase_orders
@@ -117,13 +127,15 @@ module HaloMspApi
 
     private
 
+    # rubocop:disable Metrics/AbcSize
+    # rubocop:disable Metrics/MethodLength
     def request(method, path, data = {})
       ensure_authenticated!
 
       response = connection.send(method) do |req|
         req.url path
-        req.headers["Authorization"] = "Bearer #{@access_token}"
-        req.headers["Content-Type"] = "application/json"
+        req.headers['Authorization'] = "Bearer #{@access_token}"
+        req.headers['Content-Type'] = 'application/json'
 
         if %i[post put patch].include?(method) && !data.empty?
           req.body = data.to_json
@@ -134,31 +146,37 @@ module HaloMspApi
 
       handle_response(response)
     rescue Faraday::TimeoutError
-      raise TimeoutError, "Request timed out"
+      raise TimeoutError, 'Request timed out'
     rescue Faraday::ConnectionFailed
-      raise ConnectionError, "Connection failed"
+      raise ConnectionError, 'Connection failed'
     end
+    # rubocop:enable Metrics/AbcSize
+    # rubocop:enable Metrics/MethodLength
 
+    # rubocop:disable Metrics/CyclomaticComplexity
+    # rubocop:disable Metrics/MethodLength
     def handle_response(response)
       case response.status
       when 200..299
         parse_response(response)
       when 401
-        raise AuthenticationError, "Authentication failed"
+        raise AuthenticationError, 'Authentication failed'
       when 403
-        raise AuthorizationError, "Access forbidden"
+        raise AuthorizationError, 'Access forbidden'
       when 404
-        raise NotFoundError, "Resource not found"
+        raise NotFoundError, 'Resource not found'
       when 422
         raise ValidationError, "Validation error: #{response.body}"
       when 429
-        raise RateLimitError, "Rate limit exceeded"
+        raise RateLimitError, 'Rate limit exceeded'
       when 500..599
         raise ServerError, "Server error: #{response.status}"
       else
-        raise APIError.new("Unexpected response", status_code: response.status, response_body: response.body)
+        raise APIError.new('Unexpected response', status_code: response.status, response_body: response.body)
       end
     end
+    # rubocop:enable Metrics/CyclomaticComplexity
+    # rubocop:enable Metrics/MethodLength
 
     def parse_response(response)
       return nil if response.body.nil? || response.body.empty?
@@ -178,32 +196,34 @@ module HaloMspApi
       @access_token && @token_expires_at && Time.now < @token_expires_at
     end
 
+    # rubocop:disable Metrics/AbcSize
+    # rubocop:disable Metrics/MethodLength
     def authenticate!
       auth_params = {
-        grant_type: "client_credentials",
+        grant_type: 'client_credentials',
         client_id: configuration.client_id,
         client_secret: configuration.client_secret,
-        scope: "all"
+        scope: 'all'
       }
-      
+
       # Include tenant if configured (required for multi-tenant instances)
       auth_params[:tenant] = configuration.tenant if configuration.tenant
-      
-      auth_response = connection.post("/auth/token") do |req|
-        req.headers["Content-Type"] = "application/x-www-form-urlencoded"
+
+      auth_response = connection.post('/auth/token') do |req|
+        req.headers['Content-Type'] = 'application/x-www-form-urlencoded'
         req.body = URI.encode_www_form(auth_params)
       end
 
-      if auth_response.status == 200
-        token_data = JSON.parse(auth_response.body)
-        @access_token = token_data["access_token"]
-        @token_expires_at = Time.now + token_data["expires_in"].to_i
-      else
-        raise AuthenticationError, "Failed to authenticate: #{auth_response.body}"
-      end
+      raise AuthenticationError, "Failed to authenticate: #{auth_response.body}" unless auth_response.status == 200
+
+      token_data = JSON.parse(auth_response.body)
+      @access_token = token_data['access_token']
+      @token_expires_at = Time.now + token_data['expires_in'].to_i
     rescue JSON::ParserError
-      raise AuthenticationError, "Invalid authentication response"
+      raise AuthenticationError, 'Invalid authentication response'
     end
+    # rubocop:enable Metrics/AbcSize
+    # rubocop:enable Metrics/MethodLength
 
     def build_connection
       Faraday.new(url: configuration.base_url) do |conn|
@@ -214,3 +234,4 @@ module HaloMspApi
     end
   end
 end
+# rubocop:enable Metrics/ClassLength

@@ -2,38 +2,39 @@
 
 module HaloMspApi
   module Resources
+    # Base class for all resources
     class Base
-      attr_reader :client
+      attr_reader :client_instance
 
-      def initialize(client)
-        @client = client
+      def initialize(client_instance)
+        @client_instance = client_instance
       end
 
       protected
 
       def get(path, params = {})
-        client.get(path, params)
+        client_instance.get(path, params)
       end
 
       def post(path, body = {})
-        client.post(path, body)
+        client_instance.post(path, body)
       end
 
       def put(path, body = {})
-        client.put(path, body)
+        client_instance.put(path, body)
       end
 
       def patch(path, body = {})
-        client.patch(path, body)
+        client_instance.patch(path, body)
       end
 
       def delete(path)
-        client.delete(path)
+        client_instance.delete(path)
       end
 
       # Helper method to build resource path
       def resource_path(resource_name, id = nil, action = nil)
-        path = "/#{resource_name}"
+        path = "/api/#{resource_name}"
         path += "/#{id}" if id
         path += "/#{action}" if action
         path
