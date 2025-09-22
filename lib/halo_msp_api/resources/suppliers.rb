@@ -32,27 +32,27 @@ module HaloMspApi
       # Supplier Contract methods
       # GET /SupplierContract - List Supplier contracts
       def contracts(params = {})
-        get('SupplierContract', params)
+        list_resource('SupplierContract', params)
       end
 
       # GET /SupplierContract/{id} - Get specific Supplier contract
       def contract(id, params = {})
-        get("SupplierContract/#{id}", params)
+        get_resource('SupplierContract', id, params)
       end
 
       # POST /SupplierContract - Create Supplier contract
       def create_contract(data)
-        post('SupplierContract', data)
+        create_resource('SupplierContract', data)
       end
 
       # PUT /SupplierContract/{id} - Update Supplier contract
       def update_contract(id, data)
-        put("SupplierContract/#{id}", data)
+        update_resource('SupplierContract', id, data)
       end
 
       # DELETE /SupplierContract/{id} - Delete Supplier contract
       def delete_contract(id)
-        delete("SupplierContract/#{id}")
+        delete_resource('SupplierContract', id)
       end
     end
   end

@@ -48,27 +48,27 @@ module HaloMspApi
       # Client Contract methods
       # GET /ClientContract - List Client contracts
       def contracts(params = {})
-        get('ClientContract', params)
+        list_resource('ClientContract', params)
       end
 
       # GET /ClientContract/{id} - Get specific Client contract
       def contract(id, params = {})
-        get("ClientContract/#{id}", params)
+        get_resource('ClientContract', id, params)
       end
 
       # POST /ClientContract - Create Client contract
       def create_contract(data)
-        post('ClientContract', data)
+        create_resource('ClientContract', data)
       end
 
       # PUT /ClientContract/{id} - Update Client contract
       def update_contract(id, data)
-        put("ClientContract/#{id}", data)
+        update_resource('ClientContract', id, data)
       end
 
       # DELETE /ClientContract/{id} - Delete Client contract
       def delete_contract(id)
-        delete("ClientContract/#{id}")
+        delete_resource('ClientContract', id)
       end
 
       # POST /ClientContract/Approval - Client contract approval
@@ -84,27 +84,27 @@ module HaloMspApi
       # Client Prepay methods
       # GET /ClientPrepay - List Client prepayments
       def prepayments(params = {})
-        get('ClientPrepay', params)
+        list_resource('ClientPrepay', params)
       end
 
       # GET /ClientPrepay/{id} - Get specific Client prepayment
       def prepayment(id, params = {})
-        get("ClientPrepay/#{id}", params)
+        get_resource('ClientPrepay', id, params)
       end
 
       # POST /ClientPrepay - Create Client prepayment
       def create_prepayment(data)
-        post('ClientPrepay', data)
+        create_resource('ClientPrepay', data)
       end
 
       # PUT /ClientPrepay/{id} - Update Client prepayment
       def update_prepayment(id, data)
-        put("ClientPrepay/#{id}", data)
+        update_resource('ClientPrepay', id, data)
       end
 
       # DELETE /ClientPrepay/{id} - Delete Client prepayment
       def delete_prepayment(id)
-        delete("ClientPrepay/#{id}")
+        delete_resource('ClientPrepay', id)
       end
     end
   end

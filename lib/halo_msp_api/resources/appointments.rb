@@ -31,12 +31,12 @@ module HaloMspApi
 
       # GET /Appointment/Availability - Get Appointment availability
       def availability(params = {})
-        get(resource_path('Appointment', nil, 'Availability'), params)
+        get_resource('Appointment', 'Availability', params)
       end
 
       # GET /Appointment/Calendar - Get Appointment calendar
       def calendar(params = {})
-        get(resource_path('Appointment', nil, 'Calendar'), params)
+        get_resource('Appointment', 'Calendar', params)
       end
 
       # POST /Appointment/CheckAvailability - Check Appointment availability
@@ -46,22 +46,22 @@ module HaloMspApi
 
       # GET /Appointment/Slots - Get Appointment slots
       def slots(params = {})
-        get(resource_path('Appointment', nil, 'Slots'), params)
+        list_resource('Appointment', 'Slots', params)
       end
 
       # POST /Appointment/Slots - Create Appointment slots
       def create_slots(data)
-        post(resource_path('Appointment', nil, 'Slots'), data)
+        create_resource('Appointment', 'Slots', data)
       end
 
       # GET /Appointment/Types - Get Appointment types
       def types(params = {})
-        get(resource_path('Appointment', nil, 'Types'), params)
+        list_resource('Appointment', 'Types', params)
       end
 
       # POST /Appointment/Types - Create Appointment type
       def create_type(data)
-        post(resource_path('Appointment', nil, 'Types'), data)
+        create_resource('Appointment', 'Types', data)
       end
     end
   end

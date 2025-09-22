@@ -57,7 +57,8 @@ module HaloMspApi
 
       # Helper method for update operations
       def update_resource(resource_name, id, data)
-        put(resource_path(resource_name, id), data)
+        data_with_id = data.merge(id: id)
+        post(resource_path(resource_name), data_with_id)
       end
 
       # Helper method for delete operations

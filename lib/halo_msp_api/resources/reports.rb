@@ -57,27 +57,27 @@ module HaloMspApi
       # Report Repository methods
       # GET /ReportRepository - List Report repositories
       def repositories(params = {})
-        get('ReportRepository', params)
+        list_resource('ReportRepository', params)
       end
 
       # GET /ReportRepository/{id} - Get specific Report repository
       def repository(id, params = {})
-        get("ReportRepository/#{id}", params)
+        get_resource('ReportRepository', id, params)
       end
 
       # POST /ReportRepository - Create Report repository
       def create_repository(data)
-        post('ReportRepository', data)
+        create_resource('ReportRepository', data)
       end
 
       # PUT /ReportRepository/{id} - Update Report repository
       def update_repository(id, data)
-        put("ReportRepository/#{id}", data)
+        update_resource('ReportRepository', id, data)
       end
 
       # DELETE /ReportRepository/{id} - Delete Report repository
       def delete_repository(id)
-        delete("ReportRepository/#{id}")
+        delete_resource('ReportRepository', id)
       end
 
       # GET /ReportRepository/ReportCategories - Get Report categories

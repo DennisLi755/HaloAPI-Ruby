@@ -117,6 +117,26 @@ begin
   end
   puts
 
+  # puts '9. Creating Ticket...'
+  # ticket = instance.tickets.create_ticket([{
+  #                                           "client_id": 17,
+  #                                           "priority_id": 1,
+  #                                           "tickettype_id": 1,
+  #                                           "status_id": 1,
+  #                                           "Impact": 1,
+  #                                           "Urgency": 1,
+  #                                           "Category_1": 'Business Applications',
+  #                                           "summary": 'HaloMspApi Test Ticket',
+  #                                           "details": 'Testing creating a ticket through the HaloMspApi Ruby Gem'
+  #                                         }])
+  # puts "Created Ticket #{ticket['id']} with summary #{ticket['summary']}"
+  # puts
+
+  puts '9. Listing Statuses'
+  statuses = instance.tickets.statuses
+  puts "Found #{statuses&.length || 0} statuses"
+  puts "First Status: #{statuses.first['name']}"
+
   puts '=== Example completed successfully! ==='
 rescue HaloMspApi::AuthenticationError => e
   puts "Authentication failed: #{e.message}"

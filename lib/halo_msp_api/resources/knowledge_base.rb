@@ -6,27 +6,27 @@ module HaloMspApi
     class KnowledgeBase < Base
       # GET /KBArticle - List of Knowledge Base Articles
       def articles(params = {})
-        get('KBArticle', params)
+        list_resource('KBArticle', params)
       end
 
       # GET /KBArticle/{id} - Get a specific Knowledge Base Article
       def article(id, params = {})
-        get("KBArticle/#{id}", params)
+        get_resource
       end
 
       # POST /KBArticle - Create a new Knowledge Base Article
       def create_article(data)
-        post('KBArticle', data)
+        create_resource('KBArticle', data)
       end
 
       # PUT /KBArticle/{id} - Update a Knowledge Base Article
       def update_article(id, data)
-        put("KBArticle/#{id}", data)
+        update_resource('KBArticle', id, data)
       end
 
       # DELETE /KBArticle/{id} - Delete a Knowledge Base Article
       def delete_article(id)
-        delete("KBArticle/#{id}")
+        delete_resource('KBArticle', id)
       end
 
       # GET /KBArticle/Search - Search Knowledge Base Articles
@@ -37,53 +37,53 @@ module HaloMspApi
       # Knowledge Base Category methods
       # GET /KBCategory - List Knowledge Base Categories
       def categories(params = {})
-        get('KBCategory', params)
+        list_resource('KBCategory', params)
       end
 
       # GET /KBCategory/{id} - Get specific Knowledge Base Category
       def category(id, params = {})
-        get("KBCategory/#{id}", params)
+        get_resource('KBCategory', id, params)
       end
 
       # POST /KBCategory - Create Knowledge Base Category
       def create_category(data)
-        post('KBCategory', data)
+        create_resource('KBCategory', data)
       end
 
       # PUT /KBCategory/{id} - Update Knowledge Base Category
       def update_category(id, data)
-        put("KBCategory/#{id}", data)
+        update_resource('KBCategory', id, data)
       end
 
       # DELETE /KBCategory/{id} - Delete Knowledge Base Category
       def delete_category(id)
-        delete("KBCategory/#{id}")
+        delete_resource('KBCategory', id)
       end
 
       # Knowledge Base Keywords methods
       # GET /KBKeywords - List Knowledge Base Keywords
       def keywords(params = {})
-        get('KBKeywords', params)
+        list_resource('KBKeywords', params)
       end
 
       # GET /KBKeywords/{id} - Get specific Knowledge Base Keywords
       def keyword(id, params = {})
-        get("KBKeywords/#{id}", params)
+        get_resource('KBKeywords', id, params)
       end
 
       # POST /KBKeywords - Create Knowledge Base Keywords
       def create_keyword(data)
-        post('KBKeywords', data)
+        create_resource('KBKeywords', data)
       end
 
       # PUT /KBKeywords/{id} - Update Knowledge Base Keywords
       def update_keyword(id, data)
-        put("KBKeywords/#{id}", data)
+        update_resource('KBKeywords', id, data)
       end
 
       # DELETE /KBKeywords/{id} - Delete Knowledge Base Keywords
       def delete_keyword(id)
-        delete("KBKeywords/#{id}")
+        delete_resource('KBKeywords', id)
       end
     end
   end

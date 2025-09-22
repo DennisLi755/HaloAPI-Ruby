@@ -42,38 +42,38 @@ module HaloMspApi
       # User Change methods
       # GET /UserChange - List User changes
       def changes(params = {})
-        get('UserChange', params)
+        list_resource('UserChange', params)
       end
 
       # POST /UserChange - Create User change
       def create_change(data)
-        post('UserChange', data)
+        create_resource('UserChange', data)
       end
 
       # User Roles methods
       # GET /UserRoles - List User roles
       def roles(params = {})
-        get('UserRoles', params)
+        list_resource('UserRoles', params)
       end
 
       # GET /UserRoles/{id} - Get specific User role
       def role(id, params = {})
-        get("UserRoles/#{id}", params)
+        get_resource('UserRoles', id, params)
       end
 
       # POST /UserRoles - Create User role
       def create_role(data)
-        post('UserRoles', data)
+        create_resource('UserRoles', data)
       end
 
       # PUT /UserRoles/{id} - Update User role
       def update_role(id, data)
-        put("UserRoles/#{id}", data)
+        update_resource('UserRoles', id, data)
       end
 
       # DELETE /UserRoles/{id} - Delete User role
       def delete_role(id)
-        delete("UserRoles/#{id}")
+        delete_resource('UserRoles', id)
       end
     end
   end
