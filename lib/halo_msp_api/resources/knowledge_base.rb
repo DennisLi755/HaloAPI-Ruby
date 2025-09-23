@@ -11,7 +11,7 @@ module HaloMspApi
 
       # GET /KBArticle/{id} - Get a specific Knowledge Base Article
       def article(id, params = {})
-        get_resource
+        get_resource('KBArticle', id, params)
       end
 
       # POST /KBArticle - Create a new Knowledge Base Article
