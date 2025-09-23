@@ -34,53 +34,53 @@ module HaloMspApi
       # Action Reactions methods
       # GET /ActionReaction - List action reactions
       def reactions(params = {})
-        get('ActionReaction', params)
+        list_resource('ActionReaction', params)
       end
 
       # GET /ActionReaction/{id} - Get specific action reaction
       def reaction(id, params = {})
-        get("ActionReaction/#{id}", params)
+        get_resource('ActionReaction', id, params)
       end
 
       # POST /ActionReaction - Create action reaction
       def create_reaction(data)
-        post('ActionReaction', data)
+        create_resource('ActionReaction', data)
       end
 
       # PUT /ActionReaction/{id} - Update action reaction
       def update_reaction(id, data)
-        put("ActionReaction/#{id}", data)
+        update_resource('ActionReaction', id, data)
       end
 
       # DELETE /ActionReaction/{id} - Delete action reaction
       def delete_reaction(id)
-        delete("ActionReaction/#{id}")
+        delete_resource('ActionReaction', id)
       end
 
       # Action Review methods
       # GET /ActionReview - List action reviews
       def reviews(params = {})
-        get('ActionReview', params)
+        list_resource('ActionReview', params)
       end
 
       # GET /ActionReview/{id} - Get specific action review
       def review(id, params = {})
-        get("ActionReview/#{id}", params)
+        get_resource('ActionReview', id, params)
       end
 
       # POST /ActionReview - Create action review
       def create_review(data)
-        post('ActionReview', data)
+        create_resource('ActionReview', data)
       end
 
       # PUT /ActionReview/{id} - Update action review
       def update_review(id, data)
-        put("ActionReview/#{id}", data)
+        update_resource('ActionReview', id, data)
       end
 
       # DELETE /ActionReview/{id} - Delete action review
       def delete_review(id)
-        delete("ActionReview/#{id}")
+        delete_resource('ActionReview', id)
       end
     end
   end

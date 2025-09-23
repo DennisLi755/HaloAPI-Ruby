@@ -68,22 +68,22 @@ module HaloMspApi
       # Ticket Approval methods
       # GET /TicketApproval - List Ticket approvals
       def approvals(params = {})
-        get('TicketApproval', params)
+        list_resource('TicketApproval', params)
       end
 
       # GET /TicketApproval/{id} - Get specific Ticket approval
       def approval(id, params = {})
-        get("TicketApproval/#{id}", params)
+        get_resource('TicketApproval', id, params)
       end
 
       # GET /TicketApproval/{id}&{seq} - Get specific Ticket approval with sequence
       def approval_with_sequence(id, seq, params = {})
-        get("TicketApproval/#{id}&#{seq}", params)
+        get_resource('TicketApproval', "#{id}&#{seq}", params)
       end
 
       # POST /TicketApproval - Create Ticket approval
       def create_approval(data)
-        post('TicketApproval', data)
+        create_resource('TicketApproval', data)
       end
 
       # PUT /TicketApproval/{id} - Update Ticket approval
@@ -99,110 +99,125 @@ module HaloMspApi
       # Ticket Area methods
       # GET /TicketArea - List Ticket areas
       def areas(params = {})
-        get('TicketArea', params)
+        list_resource('TicketArea', params)
       end
 
       # GET /TicketArea/{id} - Get specific Ticket area
       def area(id, params = {})
-        get("TicketArea/#{id}", params)
+        get_resource('TicketArea', id, params)
       end
 
       # POST /TicketArea - Create Ticket area
       def create_area(data)
-        post('TicketArea', data)
+        create_resource('TicketArea', data)
       end
 
       # PUT /TicketArea/{id} - Update Ticket area
       def update_area(id, data)
-        put("TicketArea/#{id}", data)
+        update_resource('TicketArea', id, data)
       end
 
       # DELETE /TicketArea/{id} - Delete Ticket area
       def delete_area(id)
-        delete("TicketArea/#{id}")
+        delete_resource('TicketArea', id)
       end
 
       # Ticket Rules methods
       # GET /TicketRules - List Ticket rules
       def rules(params = {})
-        get('TicketRules', params)
+        list_resource('TicketRules', params)
       end
 
       # GET /TicketRules/{id} - Get specific Ticket rule
       def rule(id, params = {})
-        get("TicketRules/#{id}", params)
+        get_resource('TicketRules', id, params)
       end
 
       # POST /TicketRules - Create Ticket rule
       def create_rule(data)
-        post('TicketRules', data)
+        create_resource('TicketRules', data)
       end
 
       # PUT /TicketRules/{id} - Update Ticket rule
       def update_rule(id, data)
-        put("TicketRules/#{id}", data)
+        update_resource('TicketRules', id, data)
       end
 
       # DELETE /TicketRules/{id} - Delete Ticket rule
       def delete_rule(id)
-        delete("TicketRules/#{id}")
+        delete_resource('TicketRules', id)
       end
 
       # Ticket Type methods
       # GET /TicketType - List Ticket types
       def types(params = {})
-        get('TicketType', params)
+        list_resource('TicketType', params)
       end
 
       # GET /TicketType/{id} - Get specific Ticket type
       def type(id, params = {})
-        get("TicketType/#{id}", params)
+        get_resource('TicketType', id, params)
       end
 
       # POST /TicketType - Create Ticket type
       def create_type(data)
-        post('TicketType', data)
+        create_resource('TicketType', data)
       end
 
       # PUT /TicketType/{id} - Update Ticket type
       def update_type(id, data)
-        put("TicketType/#{id}", data)
+        update_resource('TicketType', id, data)
       end
 
       # DELETE /TicketType/{id} - Delete Ticket type
       def delete_type(id)
-        delete("TicketType/#{id}")
+        delete_resource('TicketType', id)
       end
 
       # GET /TicketTypeField - List Ticket type fields
       def type_fields(params = {})
-        get('TicketTypeField', params)
+        list_resource('TicketTypeField', params)
       end
 
       # Ticket Type Group methods
       # GET /TicketTypeGroup - List Ticket type groups
       def type_groups(params = {})
-        get('TicketTypeGroup', params)
+        list_resource('TicketTypeGroup', params)
       end
 
       # GET /TicketTypeGroup/{id} - Get specific Ticket type group
       def type_group(id, params = {})
-        get("TicketTypeGroup/#{id}", params)
+        get_resource('TicketTypeGroup', id, params)
       end
 
       # POST /TicketTypeGroup - Create Ticket type group
       def create_type_group(data)
-        post('TicketTypeGroup', data)
+        create_resource('TicketTypeGroup', data)
       end
 
       # PUT /TicketTypeGroup/{id} - Update Ticket type group
       def update_type_group(id, data)
-        put("TicketTypeGroup/#{id}", data)
+        update_resource('TicketTypeGroup', id, data)
       end
 
       # DELETE /TicketTypeGroup/{id} - Delete Ticket type group
       def delete_type_group(id)
-        delete("TicketTypeGroup/#{id}")
+        delete_resource('TicketTypeGroup', id)
+      end
+
+      # GET /Status - List Ticket statuses
+      def statuses(params = {})
+        list_resource('Status', params)
+      end
+
+      # GET /Category - List Ticket categories
+      def categories(params = {})
+        list_resource('Category', params)
+      end
+
+      # GET /Lookup - List Tenant defined lookups
+      def lookups(params = {})
+        list_resource('Lookup', params)
       end
     end
   end

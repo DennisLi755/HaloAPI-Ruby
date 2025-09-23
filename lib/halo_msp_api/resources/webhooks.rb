@@ -37,53 +37,53 @@ module HaloMspApi
       # Webhook Event methods
       # GET /WebhookEvent - List Webhook events
       def events(params = {})
-        get('WebhookEvent', params)
+        list_resource('WebhookEvent', params)
       end
 
       # GET /WebhookEvent/{id} - Get specific Webhook event
       def event(id, params = {})
-        get("WebhookEvent/#{id}", params)
+        get_resource('WebhookEvent', id, params)
       end
 
       # POST /WebhookEvent - Create Webhook event
       def create_event(data)
-        post('WebhookEvent', data)
+        create_resource('WebhookEvent', data)
       end
 
       # PUT /WebhookEvent/{id} - Update Webhook event
       def update_event(id, data)
-        put("WebhookEvent/#{id}", data)
+        update_resource('WebhookEvent', id, data)
       end
 
       # DELETE /WebhookEvent/{id} - Delete Webhook event
       def delete_event(id)
-        delete("WebhookEvent/#{id}")
+        delete_resource('WebhookEvent', id)
       end
 
       # Webhook Subscription methods
       # GET /WebhookSubscription - List Webhook subscriptions
       def subscriptions(params = {})
-        get('WebhookSubscription', params)
+        list_resource('WebhookSubscription', params)
       end
 
       # GET /WebhookSubscription/{id} - Get specific Webhook subscription
       def subscription(id, params = {})
-        get("WebhookSubscription/#{id}", params)
+        get_resource('WebhookSubscription', id, params)
       end
 
       # POST /WebhookSubscription - Create Webhook subscription
       def create_subscription(data)
-        post('WebhookSubscription', data)
+        create_resource('WebhookSubscription', data)
       end
 
       # PUT /WebhookSubscription/{id} - Update Webhook subscription
       def update_subscription(id, data)
-        put("WebhookSubscription/#{id}", data)
+        update_resource('WebhookSubscription', id, data)
       end
 
       # DELETE /WebhookSubscription/{id} - Delete Webhook subscription
       def delete_subscription(id)
-        delete("WebhookSubscription/#{id}")
+        delete_resource('WebhookSubscription', id)
       end
     end
   end

@@ -117,6 +117,11 @@ begin
   end
   puts
 
+  puts '9. Listing Statuses'
+  statuses = instance.tickets.statuses
+  puts "Found #{statuses&.length || 0} statuses"
+  puts "First Status: #{statuses.first['name']}"
+
   puts '=== Example completed successfully! ==='
 rescue HaloMspApi::AuthenticationError => e
   puts "Authentication failed: #{e.message}"

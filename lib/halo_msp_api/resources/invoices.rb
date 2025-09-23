@@ -36,7 +36,7 @@ module HaloMspApi
 
       # GET /Invoice/PDF/{id} - Get Invoice PDF
       def pdf(id, params = {})
-        get(resource_path('Invoice', "PDF/#{id}"), params)
+        get_resource('Invoice', "#{id}/PDF", params)
       end
 
       # POST /Invoice/updatelines - Update Invoice lines
@@ -46,86 +46,86 @@ module HaloMspApi
 
       # GET /Invoice/View - Get Invoice view
       def view(params = {})
-        get(resource_path('Invoice', nil, 'View'), params)
+        get_resource('Invoice', 'View', params)
       end
 
       # Invoice Change methods
       # GET /InvoiceChange - List Invoice changes
       def changes(params = {})
-        get('InvoiceChange', params)
+        list_resource('InvoiceChange', params)
       end
 
       # POST /InvoiceChange - Create Invoice change
       def create_change(data)
-        post('InvoiceChange', data)
+        create_resource('InvoiceChange', data)
       end
 
       # Invoice Detail Pro Rata methods
       # GET /InvoiceDetailProRata - List Invoice detail pro rata
       def detail_pro_rata(params = {})
-        get('InvoiceDetailProRata', params)
+        list_resource('InvoiceDetailProRata', params)
       end
 
       # POST /InvoiceDetailProRata - Create Invoice detail pro rata
       def create_detail_pro_rata(data)
-        post('InvoiceDetailProRata', data)
+        create_resource('InvoiceDetailProRata', data)
       end
 
       # Invoice Payment methods
       # GET /InvoicePayment - List Invoice payments
       def payments(params = {})
-        get('InvoicePayment', params)
+        list_resource('InvoicePayment', params)
       end
 
       # GET /InvoicePayment/{id} - Get specific Invoice payment
       def payment(id, params = {})
-        get("InvoicePayment/#{id}", params)
+        get_resource('InvoicePayment', id, params)
       end
 
       # POST /InvoicePayment - Create Invoice payment
       def create_payment(data)
-        post('InvoicePayment', data)
+        create_resource('InvoicePayment', data)
       end
 
       # PUT /InvoicePayment/{id} - Update Invoice payment
       def update_payment(id, data)
-        put("InvoicePayment/#{id}", data)
+        update_resource('InvoicePayment', id, data)
       end
 
       # DELETE /InvoicePayment/{id} - Delete Invoice payment
       def delete_payment(id)
-        delete("InvoicePayment/#{id}")
+        delete_resource('InvoicePayment', id)
       end
 
       # Recurring Invoice methods
       # GET /RecurringInvoice - List Recurring invoices
       def recurring_invoices(params = {})
-        get('RecurringInvoice', params)
+        list_resource('RecurringInvoice', params)
       end
 
       # GET /RecurringInvoice/{id} - Get specific Recurring invoice
       def recurring_invoice(id, params = {})
-        get("RecurringInvoice/#{id}", params)
+        get_resource('RecurringInvoice', id, params)
       end
 
       # POST /RecurringInvoice - Create Recurring invoice
       def create_recurring_invoice(data)
-        post('RecurringInvoice', data)
+        create_resource('RecurringInvoice', data)
       end
 
       # PUT /RecurringInvoice/{id} - Update Recurring invoice
       def update_recurring_invoice(id, data)
-        put("RecurringInvoice/#{id}", data)
+        update_resource('RecurringInvoice', id, data)
       end
 
       # DELETE /RecurringInvoice/{id} - Delete Recurring invoice
       def delete_recurring_invoice(id)
-        delete("RecurringInvoice/#{id}")
+        delete_resource('RecurringInvoice', id)
       end
 
       # GET /RecurringInvoice/Lines - Get Recurring invoice lines
       def recurring_invoice_lines(params = {})
-        get('RecurringInvoice/Lines', params)
+        get_resource('RecurringInvoice', 'Lines', params)
       end
 
       # POST /RecurringInvoice/process - Process Recurring invoices
