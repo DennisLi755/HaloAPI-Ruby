@@ -115,7 +115,7 @@ module HaloMspApi
 
       # GET /AssetTypeInfo - Get Asset type info
       def type_info(params = {})
-        get_resource('AssetType', 'TypeInfo', params)
+        get(resource_path('AssetTypeInfo'), params)
       end
 
       # Asset Type Mappings methods
