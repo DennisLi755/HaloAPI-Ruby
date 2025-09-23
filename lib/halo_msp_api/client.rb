@@ -132,8 +132,6 @@ module HaloMspApi
     def request(method, path, data = {})
       ensure_authenticated!
 
-      puts "Path: #{path}"
-
       response = connection.send(method) do |req|
         req.url path
         req.headers['Authorization'] = "Bearer #{@access_token}"
